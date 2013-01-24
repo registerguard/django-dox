@@ -2,6 +2,8 @@
 
 ### Yet another Django flat pages app on steroids.
 
+Tested and working with Djago 1.3.
+
 ---
 
 #### INFO
