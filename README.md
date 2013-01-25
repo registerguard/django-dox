@@ -2,13 +2,11 @@
 
 ### Yet another Django flat pages app on steroids.
 
+The built-in flat pages app of Django is cool, but it does have its limitations. This app is based on Django's flat pages app, but I've a bunch more (useful) fields and a few goodies.
+
+This is app perfect for managing template shells and for quick prototyping.
+
 Tested and working with Djago 1.3.
-
----
-
-#### INFO
-
-More information coming soon.
 
 ---
 
@@ -67,7 +65,7 @@ Enjoy your **Django Dox** app _today!_
 
 #### LEGAL
 
-Copyright © 2012 [Micky Hulse](http://hulse.me)/[The Register-Guard](http://registerguard.com)
+Copyright © 2013 [Micky Hulse](http://hulse.me)/[The Register-Guard](http://registerguard.com)
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
 
