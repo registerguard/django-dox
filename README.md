@@ -2,7 +2,7 @@
 
 ### Yet another Django flat pages app on steroids.
 
-The built-in flat pages app of Django is cool, but it does have its limitations. This app is based on Django's flat pages app, but I've a bunch more (useful) fields and a few goodies.
+The built-in flat pages app of Django is cool, but it does have its limitations. This app is based on [Django's flat pages app](https://docs.djangoproject.com/en/dev/ref/contrib/flatpages/), but its got a bunch more (useful) fields and a few other goodies.
 
 This is app perfect for managing template shells and for quick prototyping.
 
