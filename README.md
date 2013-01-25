@@ -12,6 +12,59 @@ More information coming soon.
 
 ---
 
+#### INSTALLATION
+
+Install using [`pip`](http://www.pip-installer.org/):
+
+```$
+$ sudo pip install -e git+https://github.com/registerguard/django-dox.git#egg=django-dox
+```
+
+Add `'dox',` to your `installed_apps` setting.
+
+Put this in your URLs:
+
+```python
+(r'^pages/', include('dox.urls')),
+```
+
+Run:
+
+```bash
+$ sudo service apache2 restart
+```
+
+... or:
+
+```bash
+$ touch apache/django.wsgi
+```
+
+... or whatever you need to do to reload things.
+
+Lastly:
+
+```bash
+$ python manage.py syncdb
+```
+
+Next, load the fixture for statii:
+
+```bash
+$ python manage.py loaddata dox/fixtures/dox_initial_data.json
+```
+
+OR, manaully add statii:
+
+1. "Open", live.
+2. "Closed", not live.
+
+... and you're ready to go (maybe do another `touch`?)!
+
+Enjoy your **Django Dox** app _today!_
+
+---
+
 #### LEGAL
 
 Copyright © 2012 [Micky Hulse](http://hulse.me)/[The Register-Guard](http://registerguard.com)
