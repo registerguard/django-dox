@@ -14,7 +14,7 @@ Tested and working with Djago 1.3.
 
 Install using [`pip`](http://www.pip-installer.org/):
 
-```$
+```bash
 $ sudo pip install -e git+https://github.com/registerguard/django-dox.git#egg=django-dox
 ```
 
