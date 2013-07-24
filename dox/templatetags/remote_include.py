@@ -35,7 +35,7 @@ class RemoteInclude(template.Node):
         if self.should_cache:
             cache_key = self.url + 'cg_ri'
             output = cache.get(cache_key)
-            if output == None or output == self.ERROR_LOADING:
+            if output == None or output.decode('utf-8') == self.ERROR_LOADING:
                 #print('retrieving from url')
                 output = self.get_url()
                 cache.set(cache_key, output, self.timeout)
