@@ -1,0 +1,72 @@
+{% extends "dox/bulldog.html" %}
+
+{% load allow_tags %}
+{% load splitter %}
+
+{% block head_ad_ids %}
+	
+	// Story page:
+	_ox.addAdUnit('537200296'); // Leaderboard 1
+	_ox.addAdUnit('537200316'); // Mobile Banner
+	_ox.addAdUnit('537200298'); // Medium Rectangle 1
+	_ox.addAdUnit('537200299'); // Medium Rectangle 2
+	
+{% endblock head_ad_ids %}
+
+{% block head_extra %}
+	
+	{{ block.super }}
+	
+	<link rel="stylesheet" href="http://assets.registerguard.com/demos/indesign/styles.css">
+	
+{% endblock head_extra %}
+
+{% block leaderboard_1 %}
+	
+	<!-- //////////////////// Leaderboard 1 \\\\\\\\\\\\\\\\\\\\ -->
+	<div class="advert"><div id="leaderboard-1"><script>_ox.showAdUnit('537200296');</script></div></div>
+	<!-- \\\\\\\\\\\\\\\\\\\\ Leaderboard 1 //////////////////// -->
+	
+{% endblock leaderboard_1 %}
+
+{% block mobile_banner %}
+	
+	<!-- //////////////////// Mobile Banner \\\\\\\\\\\\\\\\\\\\ -->
+	<div class="advert"><div id="mobile-banner"><script>_ox.showAdUnit('537200316');</script></div></div>
+	<!-- \\\\\\\\\\\\\\\\\\\\ Mobile Banner //////////////////// -->
+	
+{% endblock mobile_banner %}
+
+{% block body %}
+	
+	<div class="w_row">
+		
+		<div class="w_col w_C130">&nbsp;</div>
+		
+		<div class="w_col w_C640 w_D980">
+			
+			<div id="bd_content">
+				
+				<div class="section">
+					
+					<article>
+						
+						{% block content %}
+							
+							{{ block.super }}
+							
+						{% endblock content %}
+						
+					</article>
+					
+				</div> <!-- /.section -->
+				
+			</div> <!-- /#story -->
+			
+		</div> <!-- /.w_col -->
+		
+		<div class="w_col w_C130">&nbsp;</div>
+		
+	</div> <!-- /.w_row -->
+	
+{% endblock body %}

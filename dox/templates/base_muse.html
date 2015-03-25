@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>{% block head_title %}{% endblock head_title %}{% block head_title_extra %} | The Register-Guard | Eugene, Oregon{% endblock head_title_extra %}</title>
+	
+	<meta name="description" content="{% block head_description %}{% endblock head_description %}">
+	<meta name="keywords" content="{% block head_keywords %}{% endblock head_keywords %}">
+	<meta name="verify-v1" content="FPxMUeDPHJaIRBh+RAEc0QZisGX9WHLZuqlbleiLe3c=">
+	<meta name="google-site-verification" content="-b9kSGtOMT3DZyn5y1faDWWBN74GtyBDZlCDJuf39Yc">
+	<meta name="y_key" content="c812b5bf5b82479c">
+	
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.0.0/build/cssfonts/fonts-min.css&amp;3.0.0/build/cssreset/reset-min.css&amp;3.0.0/build/cssbase/base-min.css">
+	<link rel="stylesheet" href="http://assets.registerguard.com/v4.0/muse/1.0/css/muse.css?v=20120131" type="text/css">
+	
+	<!--[if IE 6]>
+		<style type="text/css">
+			#mMasthead h6 { top: 20px; }
+		</style>
+	<![endif]-->
+	
+	<link rel="shortcut icon" href="http://www.registerguard.com/favicon.ico">
+	
+	{% block head_ads %}
+		
+		<script type="text/javascript" src="http://ox-d.registerguard.com/w/1.0/jstag"></script>
+		
+	{% endblock head_ads %}
+	
+	{% block head_extra %}{% endblock head_extra %}
+	
+</head>
+<body>
+	
+	{% block banner_top %}
+		
+		<div id="mLeader" class="mBanner">
+			
+			<div class="mAdvert">
+				
+				<p>Advertisement</p>
+				
+				<!-- Leaderboard: -->
+				<script type="text/javascript">{% block ad_leaderboard %}OX.requestAd({"auid":"11995"});{% endblock ad_leaderboard %}</script>
+				
+			</div> <!-- /mAdvert -->
+			
+		</div> <!--/#mLeader -->
+		
+	{% endblock banner_top %}
+	
+	<div id="mWrap">
+		
+		<div id="mMasthead" class="mClear">
+			
+			<h2>{% block title %}{% endblock title %}</h2>
+			<h6><a href="http://www.registerguard.com">The Register-Guard</a></h6>
+			
+		</div> <!-- /#mMasthead -->
+		
+		{% block body %}
+			
+			<div id="mContent">
+			<!-- ##### BEGIN CONTENT ##### -->
+				
+				{% block content %}{% endblock content %}
+				
+			<!-- ##### END CONTENT ##### -->
+			</div> <!-- /#mContent -->
+			
+		{% endblock body %}
+		
+	</div> <!-- /#mWrap -->
+	
+	{% block banner_bottom %}
+		
+		<div id="mFollower" class="mBanner">
+			
+			<div class="mAdvert">
+				
+				<p>Advertisement</p>
+				
+				<!-- Bottom Leaderboard: -->
+				<script type="text/javascript">{% block ad_leaderboard_bottom %}OX.requestAd({"auid":"11998"});{% endblock ad_leaderboard_bottom %}</script>
+				
+			</div> <!-- /.mAdvert -->
+			
+		</div> <!--/#mFollower -->
+		
+	{% endblock banner_bottom %}
+	
+	{% block footer_extra %}{% endblock footer_extra %}
+	
+	{% block footer_last %}
+		
+		{% include "dox/includes/footer_last.html" %}
+		
+	{% endblock footer_last %}
+	
+</body>
+</html>

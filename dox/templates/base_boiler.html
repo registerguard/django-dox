@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+	
+	<meta charset="utf-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>{% block head_title %}{% endblock head_title %}{% block head_title_extra %} | The Register-Guard | Eugene, Oregon{% endblock head_title_extra %}</title>
+	<meta name="description" content="{% block head_description %}{% endblock head_description %}">
+	<meta name="keywords" content="{% block head_keywords %}{% endblock head_keywords %}">
+	
+	<meta name="verify-v1" content="FPxMUeDPHJaIRBh+RAEc0QZisGX9WHLZuqlbleiLe3c=">
+	<meta name="google-site-verification" content="-b9kSGtOMT3DZyn5y1faDWWBN74GtyBDZlCDJuf39Yc">
+	<meta name="y_key" content="c812b5bf5b82479c">
+	
+	<link rel="shortcut icon" href="http://www.registerguard.com/favicon.ico">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	
+	{% block head_extra %}{% endblock head_extra %}
+	
+</head>
+<body>
+	
+	{% block content %}{% endblock content %}
+	
+	{% block footer_extra %}{% endblock footer_extra %}
+	
+	{% block footer_last %}
+		
+		{% include "dox/includes/footer_last.html" %}
+		
+	{% endblock footer_last %}
+	
+</body>
+</html>

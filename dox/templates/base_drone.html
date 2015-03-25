@@ -1,0 +1,225 @@
+{% with build="/v5/drone/prod/1.0.0/20140609/1" %}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	
+	<meta name="viewport" content="width=1020">
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	
+	<title>{% block head_title %}{% endblock head_title %}{% block head_title_extra %} | The Register-Guard | Eugene, Oregon{% endblock head_title_extra %}</title>
+	<meta name="description" content="{% block head_description %}{% endblock head_description %}">
+	<meta name="keywords" content="{% block head_keywords %}{% endblock head_keywords %}">
+	
+	<meta name="verify-v1" content="FPxMUeDPHJaIRBh+RAEc0QZisGX9WHLZuqlbleiLe3c=">
+	<meta name="google-site-verification" content="-b9kSGtOMT3DZyn5y1faDWWBN74GtyBDZlCDJuf39Yc">
+	<meta name="y_key" content="c812b5bf5b82479c">
+	
+	<link rel="stylesheet" href="http://static.registerguard.com{{ build }}/css/drone.min.css">
+	
+	{% block head_ad %}
+		
+		<!-- [BEGIN] OpenX -->
+		<script src="//ox-d.registerguard.com/w/1.0/jstag"></script>
+		<script>
+			
+			var _ox = OX();
+			
+			{% block head_ad_ids %}
+				// Section front:
+				_ox.addAdUnit('537200277'); // Leaderboard 1
+				_ox.addAdUnit('537200278'); // Medium Rectangle 1
+				_ox.addAdUnit('537200279'); // Medium Rectangle 2
+			{% endblock head_ad_ids %}
+			
+			// ROS:
+			_ox.addAdUnit('537200307'); // ROS Leaderboard Bottom
+			
+			// Variables:
+			_ox.addVariable('bp', 'd');
+			{% block head_ad_vars %}{% endblock head_ad_vars %}
+			
+			// Get ads:
+			_ox.fetchAds();
+			
+		</script>
+		<!-- [END] OpenX -->
+		
+	{% endblock head_ad %}
+	
+	{% block head_extra %}{% endblock head_extra %}
+	
+</head>
+<body>
+	
+	<div id="uav_top" class="uav">
+		
+		{% block header %}
+			
+			<div id="uav_header">
+				
+				<h6 id="uav_flag"><a href="http://registerguard.com/">The Register-Guard</a></h6>
+				
+				<ul id="uav_global">
+					<li><a href="http://services.registerguard.com/">Subscriber Services</a></li>
+					<li><a href="http://registerguard.com/homes">Homes</a></li>
+					<li><a href="http://registerguard.com/autos">Autos</a></li>
+					<li><a href="http://registerguard.com/jobs">Jobs</a></li>
+					<li><a href="http://registerguard.com/classifieds">Classified</a></li>
+					<li><a href="http://registerguard.com/">Home</a></li>
+				</ul> <!-- /#uav_global -->
+				
+			</div> <!-- /#uav_header -->
+			
+		{% endblock header %}
+		
+		{% block navigation %}
+			
+			<div id="uav_navigation">
+				
+				<ul id="uav_links">
+					<li><a href="http://registerguard.com/">News</a></li>
+					<li><a href="http://registerguard.com/rg/sports/">Sports</a></li>
+					<li><a href="http://registerguard.com/rg/business/">Business</a></li>
+					<li><a href="http://registerguard.com/rg/opinion/">Opinion</a></li>
+					<li><a href="http://registerguard.com/rg/life/">Life</a></li>
+					<li><a href="http://registerguard.com/rg/entertainment/">Entertainment</a></li>
+					<li><a href="http://registerguard.com/rg/news/obituaries/">Obits</a></li>
+					<li><a href="http://blogs.registerguard.com/">Blogs</a></li>
+					<li><a href="http://marketplace.registerguard.com">Marketplace</a></li>
+					<li><a href="http://projects.registerguard.com/pages/search/">Search</a></li>
+				</ul> <!-- /#uav_links -->
+				
+			</div> <!-- /#uav_navigation -->
+			
+		{% endblock navigation %}
+		
+		{% block banner_top %}
+			
+			<div class="uav_banner">
+				
+				{% block leaderboard_1 %}
+					
+					<!-- //////////////////// Leaderboard 1 \\\\\\\\\\\\\\\\\\\\ -->
+					<div class="uav_advert"><div id="leaderboard-1"><script>_ox.showAdUnit('537200277');</script></div></div>
+					<!-- \\\\\\\\\\\\\\\\\\\\ Leaderboard 1 //////////////////// -->
+					
+				{% endblock leaderboard_1 %}
+				
+			</div> <!-- /.uav_banner -->
+			
+		{% endblock banner_top %}
+		
+	</div> <!-- /#uav_top -->
+	
+	<div id="uav_middle" class="uav">
+		
+		{% block body %}
+			
+			<div class="uav_layout">
+				
+				<div class="uav_wrapper">
+					
+					<div class="uav_primary">
+						
+						<div class="uav_wrap">
+							
+							{% block content %}{% endblock content %}
+							
+						</div> <!-- /.uav_wrap -->
+						
+					</div> <!-- /.uav_primary -->
+					
+					<div class="uav_secondary">
+						
+						{% block secondary %}
+							
+							<div class="uav_wrap">
+								
+								{% block medium_rectangle_1 %}
+									
+									<!-- //////////////////// Medium Rectangle 1 \\\\\\\\\\\\\\\\\\\\ -->
+									<div class="uav_advert"><div id="medium-rectangle-1"><script>_ox.showAdUnit('537200278');</script></div></div>
+									<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 1 //////////////////// -->
+									
+								{% endblock medium_rectangle_1 %}
+								
+								{% block secondary_content %}{% endblock secondary_content %}
+								
+								{% block medium_rectangle_2 %}
+									
+									<!-- //////////////////// Medium Rectangle 2 \\\\\\\\\\\\\\\\\\\\ -->
+									<div class="uav_advert"><div id="medium-rectangle-2"><script>_ox.showAdUnit('537200279');</script></div></div>
+									<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 2 //////////////////// -->
+									
+								{% endblock medium_rectangle_2 %}
+								
+							</div> <!-- /.uav_wrap -->
+							
+						{% endblock secondary %}
+						
+					</div> <!-- /.uav_secondary -->
+					
+				</div> <!-- /.uav_wrapper -->
+				
+			</div> <!-- /.uav_layout -->
+			
+		{% endblock body %}
+		
+	</div> <!-- /#uav_middle -->
+	
+	<div id="uav_bottom" class="uav">
+		
+		{% block banner_bottom %}
+			
+			<div class="uav_banner">
+				
+				{% block ros_leaderboard_bottom %}
+					
+					<!-- //////////////////// ROS Leaderboard Bottom \\\\\\\\\\\\\\\\\\\\ -->
+					<div class="uav_advert"><div id="ros-leaderboard-bottom"><script>_ox.showAdUnit('537200307');</script></div></div>
+					<!-- \\\\\\\\\\\\\\\\\\\\ ROS Leaderboard Bottom //////////////////// -->
+					
+				{% endblock ros_leaderboard_bottom %}
+				
+			</div> <!-- /.uav_banner -->
+			
+		{% endblock banner_bottom %}
+		
+		{% block footer %}
+			
+			<div id="uav_footer">
+				
+				<p>The Register-Guard &bull; <a href="http://g.co/maps/h6sgk">3500 Chad Drive</a> &bull; Eugene, OR &bull; 97408 / (541) 485-1234 / <a href="mailto:&#102;&#101;&#101;&#100;&#98;&#97;&#99;&#107;&#64;&#114;&#101;&#103;&#105;&#115;&#116;&#101;&#114;&#103;&#117;&#97;&#114;&#100;&#46;&#99;&#111;&#109;">&#70;&#101;&#101;&#100;&#98;&#97;&#99;&#107;</a></p>
+				
+				<p>Copyright &copy; 1996–<script type="text/javascript">document.write(new Date().getFullYear());</script> / <a href="http://projects.registerguard.com/pages/terms-of-use/">Terms</a> / <a href="http://projects.registerguard.com/pages/privacy-statement/">Privacy</a> / <a href="http://projects.registerguard.com/pages/copyright/">Copyright</a></p>
+				
+			</div> <!-- /#uav_footer -->
+			
+		{% endblock footer %}
+		
+	</div> <!-- /#uav_bottom -->
+	
+	{% block footer_extra %}{% endblock footer_extra %}
+	
+	<!-- [BEGIN] comScore -->
+	<script type="text/javascript">var _comscore=_comscore||[];_comscore.push({c1:'2',c2:'14055685'});(function(){var s=document.createElement('script'),el=document.getElementsByTagName('script')[0];s.async=true;s.src=(document.location.protocol=='https:'?'https://sb':'http://b')+'.scorecardresearch.com/beacon.js';el.parentNode.insertBefore(s,el);})();</script>
+	<noscript><img src="//b.scorecardresearch.com/p?c1=2&amp;c2=14055685&amp;cv=2.0&amp;cj=1" width="1" height="1" alt=""></noscript>
+	<!-- [END] comScore -->
+	
+	<!-- [BEGIN] Quantcast -->
+	<script type="text/javascript">var _qevents=_qevents||[];(function(){var elem=document.createElement('script');elem.src=(document.location.protocol=='https:'?'https://secure':'http://edge')+'.quantserve.com/quant.js';elem.async=true;elem.type='text/javascript';var scpt=document.getElementsByTagName('script')[0];scpt.parentNode.insertBefore(elem,scpt);})();_qevents.push({qacct:'p-a2gE_aSO6ndbI'});</script>
+	<noscript><img src="//pixel.quantserve.com/pixel/p-a2gE_aSO6ndbI.gif" width="1" height="1" alt=""></noscript>
+	<!-- [END] Quantcast -->
+	
+	<!-- [BEGIN] Analytics -->
+	<script type="text/javascript">(function(r,g,n,e,w,s){r.GoogleAnalyticsObject=e;r[e]||(r[e]=function(){(r[e].q=r[e].q||[]).push(arguments)});r[e].l=+new Date;w=g.createElement(n);s=g.getElementsByTagName(n)[0];w.src='//www.google-analytics.com/analytics.js';s.parentNode.insertBefore(w,s)}(window,document,'script','ga'));ga('create','UA-882065-1','registerguard.com');ga('require','displayfeatures');ga('require','linkid','linkid.js');ga('send','pageview');</script>
+	<!-- [END] Analytics -->
+	
+	{% block footer_last %}{% endblock footer_last %}
+	
+</body>
+</html>
+
+{% endwith %}

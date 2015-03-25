@@ -1,0 +1,29 @@
+{% extends "base_muse.html" %}
+
+{% block head_title %}{{ page.head_title }}{% endblock head_title %}
+
+{% block head_title_extra %}
+	
+	{% if page.head_title_extra %}
+		
+		{{ page.head_title_extra }}
+		
+	{% else %}
+		
+		{{ block.super }}
+		
+	{% endif %}
+	
+{% endblock head_title_extra %}
+
+{% block head_description %}{{ page.head_description }}{% endblock head_description %}
+
+{% block head_keywords %}{{ page.head_keywords }}{% endblock head_keywords %}
+
+{% block head_extra %}{{ page.head_extra|safe }}{% endblock head_extra %}
+
+{% block title %}{{ page.title }}{% endblock title %}
+
+{% block content %}{{ page.content|safe }}{% endblock content %}
+
+{% block footer_extra %}{{ page.extra|safe }}{% endblock footer_extra %}

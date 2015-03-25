@@ -1,0 +1,73 @@
+{% extends "dox/bulldog.html" %}
+
+{% block weather_ad %}{% endblock weather_ad %}
+
+{% block body %}
+
+<div class="w_row">
+	
+	<div class="w_col w_C640 w_D980 Cla Dla">
+		
+		{% block content %} {{ block.super }} {% endblock content %}
+		
+	</div> <!-- /.w_col -->
+	
+	<div class="w_col w_C300 Clb Dlb">
+		
+		{% block secondary %}
+			
+			{% block medium_rectangle_1 %}
+				
+				<!-- //////////////////// MEDIUM RECTANGLE 1 \\\\\\\\\\\\\\\\\\\\ -->
+				
+				<div class="medium_rectangle advert Aon Bon"><div id="medium_rectangle_1-mobile"></div></div>
+				
+				<div class="medium_rectangle advert Con Don"><div id="medium_rectangle_1-desktop"></div></div>
+				
+				<!-- \\\\\\\\\\\\\\\\\\\\ MEDIUM RECTANGLE 1 //////////////////// -->
+				
+			{% endblock medium_rectangle_1 %}
+			
+			<div class="rc_twitter">
+				
+				<a class="twitter-timeline" href="https://twitter.com/rg_choice" data-widget-id="296847416181784576" width="600">Tweets by @rg_choice</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				
+			</div>
+			
+		{% endblock secondary %}
+		
+	</div> <!-- /.w_col -->
+	
+</div> <!-- /.w_row -->
+
+{% endblock body %}
+
+{% block banner_bottom %}
+	
+	<!-- stopgap until ROS bottom can be overridden -->
+	<div id="bd_banner_bottom" class="bd_banner">
+		
+		<!-- //////////////////// LEADERBOARD BOTTOM \\\\\\\\\\\\\\\\\\\\ -->
+		
+		<div class="mobile_banner advert Aon Bon">
+			
+			<div id="mobile_banner-no-ros">
+				
+				<iframe src="http://ox-d.registerguard.com/w/1.0/afr?auid=348991&amp;cb=24156456141" width="320" height="50" frameBorder="0" frameSpacing="0" scrolling="no"></iframe>
+				
+			</div>
+			
+		</div>
+		
+		<div class="leaderboard advert Con Don">
+			
+			<iframe src="http://ox-d.registerguard.com/w/1.0/afr?auid=348990&amp;cb=24156456141" width="728" height="90" frameBorder="0" frameSpacing="0" scrolling="no"></iframe>
+			
+		</div>
+		
+		<!-- \\\\\\\\\\\\\\\\\\\\ LEADERBOARD BOTTOM //////////////////// -->
+		
+	</div> <!-- /#banner_bottom -->
+	
+{% endblock banner_bottom %}

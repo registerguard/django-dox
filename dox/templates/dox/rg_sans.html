@@ -1,0 +1,9 @@
+{# This template removes the sidebar from rg.html... #}
+
+{% extends "dox/rg.html" %}
+
+{% block body %}
+	
+	{% block content %}{{ block.super }}{% endblock content %}
+	
+{% endblock body %}

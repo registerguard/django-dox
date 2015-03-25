@@ -1,0 +1,40 @@
+<html>
+<head>
+</head>
+<body>
+<div class="item" style="padding-bottom: 10px;">
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js">
+</script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'list',
+  rpp: 30,
+  interval: 30000,
+  title: 'The Register-Guard track &amp; field team',
+  subject: 'Olympic Track &amp; Field Trials',
+  width: 290,
+  height: 320,
+  theme: {
+    shell: {
+      background: '#2d3138',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#444444',
+      links: '#247fe6'
+    }
+  },
+  features: {
+    scrollbar: true,
+    loop: false,
+    live: true,
+    behavior: 'all'
+  }
+}).render().setList('rgsports', 'rg-us-oly-track-trials').start();
+</script>
+</div>
+
+</body>
+</html>

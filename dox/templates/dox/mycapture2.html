@@ -1,0 +1,9 @@
+{% extends "dox/drone.html" %}
+
+{% block head_ad_vars %}_ox.addVariable('s', 'mycapture');{% endblock head_ad_vars %}
+
+{% block body %}
+	
+	{% block content %}{{ block.super }}{% endblock content %}
+	
+{% endblock body %}

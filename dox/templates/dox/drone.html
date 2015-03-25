@@ -1,0 +1,77 @@
+{% extends "base_drone.html" %}
+
+{% load allow_tags %}
+
+{% block head_title %}
+	
+	{% if page.head_title %}
+		
+		{{ page.head_title }}
+		
+	{% endif %}
+	
+{% endblock head_title %}
+
+{% block head_title_extra %}
+	
+	{% if page.head_title_extra %}
+		
+		{{ page.head_title_extra }}
+		
+	{% else %}
+		
+		{{ block.super }}
+		
+	{% endif %}
+	
+{% endblock head_title_extra %}
+
+{% block head_description %}
+	
+	{% if page.head_description %}
+		
+		{{ page.head_description }}
+		
+	{% endif %}
+	
+{% endblock head_description %}
+
+{% block head_keywords %}
+	
+	{% if page.head_keywords %}
+		
+		{{ page.head_keywords }}
+		
+	{% endif %}
+	
+{% endblock head_keywords %}
+
+{% block head_extra %}
+	
+	{% if page.head_extra %}
+		
+		{{ page.head_extra|safe }}
+		
+	{% endif %}
+	
+{% endblock head_extra %}
+
+{% block content %}
+	
+	{% if page.content %}
+		
+		{% allow_tags page.content %}
+		
+	{% endif %}
+	
+{% endblock content %}
+
+{% block footer_extra %}
+	
+	{% if page.extra %}
+		
+		{{ page.extra|safe }}
+		
+	{% endif %}
+	
+{% endblock footer_extra %}

@@ -1,0 +1,9 @@
+{% extends "dox/bulldog.html" %}
+
+{# This template removes the default layout from bulldog.html... #}
+
+{% block body %}
+	
+	{% block content %}{{ block.super }}{% endblock content %}
+	
+{% endblock body %}

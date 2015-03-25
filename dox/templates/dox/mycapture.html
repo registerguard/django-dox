@@ -1,0 +1,27 @@
+{% extends "dox/wired.html" %}
+
+{% block head_extra %}
+	
+	<link rel="stylesheet" type="text/css" href="http://assets.registerguard.com/vendor/mycapture/1.0/mycapture.css?v=20120109">
+	
+	{{ block.super }}
+	
+{% endblock head_extra %}
+
+{% block ad_leaderboard %}OX.requestAd({"auid":"119248"});{% endblock ad_leaderboard %}
+
+{% block nav %}{% endblock nav %}
+
+{% block body %}
+	
+	<div id="wContentAlt">
+		
+		<!-- ##### BEGIN CONTENT ##### -->
+		
+		{% block content %}{{ block.super }}{% endblock content %}
+		
+		<!-- ##### END CONTENT ##### -->
+		
+	</div> <!-- /.wContent -->
+	
+{% endblock body %}

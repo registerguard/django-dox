@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	
+	<title>{% block head_title %}{% endblock head_title %}{% block head_title_extra %} | The Register-Guard | Eugene, Oregon{% endblock head_title_extra %}</title>
+	
+	<meta name="description" content="{% block head_description %}{% endblock head_description %}">
+	<meta name="keywords" content="{% block head_keywords %}{% endblock head_keywords %}">
+	
+	<meta name="verify-v1" content="FPxMUeDPHJaIRBh+RAEc0QZisGX9WHLZuqlbleiLe3c=">
+	<meta name="google-site-verification" content="-b9kSGtOMT3DZyn5y1faDWWBN74GtyBDZlCDJuf39Yc">
+	<meta name="y_key" content="c812b5bf5b82479c">
+	
+	<link rel="shortcut icon" href="http://www.registerguard.com/favicon.ico">
+	
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.0.0/build/cssfonts/fonts-min.css&amp;3.0.0/build/cssreset/reset-min.css&amp;3.0.0/build/cssbase/base-min.css">
+	<link rel="stylesheet" type="text/css" href="http://assets.registerguard.com/v4.0/wired/2.0/css/wired.css?v=20120109">
+	
+	<!--[if lte IE 7]>
+		<style type="text/css">
+			/* 3px jog fix not needed for some reason (looked better in IE6 without this hack): */
+			/** html #wContent .wSecondary { margin-left: -3px; }*/ /* IE 3 pixel jog. */
+			#wContent .wSecondary { margin-left: 10px; } /* For some reason, this makes IE6 look like other browsers. */
+		</style>
+	<![endif]-->
+	
+	<!--[if IE 6]>
+		<style type="text/css">
+			.wParts h6 { top: 41px; }
+			#wFooter h6 { top: 18px; }
+		</style>
+	<![endif]-->
+	
+	<script type="text/javascript" src="http://ox-d.registerguard.com/w/1.0/jstag"></script>
+	
+	{% block head_extra %}{% endblock head_extra %}
+	
+</head>
+<body>
+	
+	<div id="wTop">
+		
+		<div id="wGlobNav">
+			
+			<script type="text/javascript" src="http://assets.registerguard.com/v4.0/wired/2.0/js/nav.inc.js?v=20120109"></script>
+			
+		</div> <!-- /#wGlobNav -->
+		
+		<hr>
+		
+		<div id="wHeader" class="wParts">
+			
+			<div class="wWrap">
+				
+				<h2>{% block title %}{% endblock title %}</h2>
+				
+				<hr>
+				
+				<h6><a href="http://www.registerguard.com">The Register-Guard</a></h6>
+				
+			</div> <!-- /.wWrap -->
+			
+		</div> <!--/ #wHeader -->
+		
+		<hr>
+		
+		{% block nav %}
+			
+			<div id="wNavigation">
+				
+				{% block navigation %}{% endblock navigation %}
+				
+			</div> <!-- /#wNavigation -->
+			
+			<hr>
+			
+		{% endblock nav %}
+		
+		<div id="wLeader" class="wBanner">
+			
+			<div class="wAdvert">
+				
+				<p>Advertisement</p>
+				
+				<!-- Leaderboard: -->
+				<script type="text/javascript">{% block ad_leaderboard %}OX.requestAd({"auid":"11995"});{% endblock ad_leaderboard %}</script>
+				
+			</div> <!-- /wAdvert -->
+			
+		</div> <!--/#wLeader -->
+		
+	</div> <!-- /#wTop -->
+	
+	<hr>
+	
+	{% block body %}
+		
+		<div id="wContent">
+			
+			<div class="wWrapper wClear">
+				
+				<div id="wMain" class="wPrimary">
+					
+					<div class="wWrap">
+						
+						<!--<h1 id="wLocation">Section Label</h1>-->
+						<table id="BandAid">
+							<tr>
+								<td>
+									<!-- ##### BEGIN CONTENT ##### -->
+									
+									{% block content %}{% endblock content %}
+									
+									<!-- ##### END CONTENT ##### -->
+								</td>
+							</tr>
+						</table> <!-- /#BandAid -->
+						
+					</div> <!-- /.wWrap -->
+					
+				</div> <!-- /.wPrimary -->
+				
+				<hr>
+				
+				<div id="wSidebar" class="wSecondary">
+					
+					<div class="wWrap">
+						
+						<div class="wAdvert">
+							
+							<p>Advertisement</p>
+							
+							<!-- Medium Rectangle: -->
+							<script type="text/javascript">{% block ad_medium_rectangle %}OX.requestAd({"auid":"11997"});{% endblock ad_medium_rectangle %}</script>
+							
+						</div> <!-- /wAdvert -->
+						
+						<div class="wDivider"></div>
+						<hr>
+						
+						<div class="wAdvert">
+							
+							<p>Advertisement</p>
+							
+							<!-- Half Page: -->
+							<script type="text/javascript">{% block ad_half_page %}OX.requestAd({"auid":"11996"});{% endblock ad_half_page %}</script>
+							
+						</div> <!-- /wAdvert -->
+						
+					</div> <!-- /.wWrap -->
+					
+				</div> <!-- /#wSidebar -->
+				
+			</div> <!-- /.wWrap -->
+			
+		</div> <!-- /#wContent -->
+		
+	{% endblock body %}
+	
+	<hr>
+	
+	<div id="wBottom">
+		
+		<div id="wFollower" class="wBanner">
+			
+			<div class="wAdvert">
+				
+				<p>Advertisement</p>
+				
+				<!-- Bottom Leaderboard: -->
+				<script type="text/javascript">{% block ad_leaderboard_bottom %}OX.requestAd({"auid":"11998"});{% endblock ad_leaderboard_bottom %}</script>
+				
+			</div> <!-- /.wAdvert -->
+			
+		</div> <!--/#wFollower -->
+		
+		<hr>
+		
+		<div id="wFooter" class="wParts">
+			
+			<div class="wWrap">
+				
+				<p>Copyright &copy; 1998-{% now "Y" %}</p>
+				
+				<hr>
+				
+				<h6><a href="http://www.registerguard.com">The Register-Guard</a></h6>
+				
+			</div> <!-- /.wWrap -->
+			
+		</div> <!-- /#wFooter -->
+		
+	</div> <!-- /#wBottom -->
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="http://static.registerguard.com/superfish/jquery.superfish-1.4.8.js"></script>
+	<script type="text/javascript" src="http://static.registerguard.com/hoverintent/jquery.hoverIntent-r6.min.js"></script>
+	
+	<script type="text/javascript">
+		<!--
+			
+			$(document).ready(function() {
+				
+				$.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase());
+				if ($.browser.chrome) { $('body').addClass('chrome'); }
+				
+				$('ul#wMenu').superfish();
+				
+			});
+			
+		//-->
+	</script>
+	
+	{% block footer_extra %}{% endblock footer_extra %}
+	
+	{% block footer_last %}
+		
+		{% include "dox/includes/footer_last.html" %}
+		
+	{% endblock footer_last %}
+	
+</body>
+</html>

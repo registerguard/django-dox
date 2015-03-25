@@ -1,0 +1,31 @@
+{% extends "dox/wired.html" %}
+
+{% block head_extra %}
+	
+	<link rel="stylesheet" type="text/css" href="http://assets.registerguard.com/vendor/zap2it/2.0/zap2it.css?v=20111228">
+	
+	{{ block.super }}
+	
+{% endblock head_extra %}
+
+{% block navigation %}
+	
+	<script type="text/javascript" src="http://assets.registerguard.com/vendor/zap2it/2.0/nav.inc.js?v=20111228"></script>
+	
+{% endblock navigation %}
+
+{% block body %}
+	
+	<table id="BandAid">
+		<tr>
+			<td>
+				<!-- ##### BEGIN CONTENT ##### -->
+				
+				{% block content %}{{ block.super }}{% endblock content %}
+				
+				<!-- ##### END CONTENT ##### -->
+			</td>
+		</tr>
+	</table> <!-- /#BandAid -->
+	
+{% endblock body %}
