@@ -1,0 +1,46 @@
+{% extends "dox/bulldog.html" %}
+
+{% load allow_tags %}
+{% load splitter %}
+
+{% block head_ad_ids %}{% endblock head_ad_ids %}
+
+{% block leaderboard_1 %}{% endblock leaderboard_1 %}
+
+{% block mobile_banner %}{% endblock mobile_banner %}
+
+{% block body %}
+	
+	<div class="w_row">
+		
+		<div class="w_col w_C130">&nbsp;</div>
+		
+		<div class="w_col w_C640 w_D980">
+			
+			<div id="bd_content">
+				
+				<div class="section">
+					
+					<article>
+						
+						{% block content %}
+							
+							{{ block.super }}
+							
+						{% endblock content %}
+						
+					</article>
+					
+				</div> <!-- /.section -->
+				
+			</div> <!-- /#story -->
+			
+		</div> <!-- /.w_col -->
+		
+		<div class="w_col w_C130">&nbsp;</div>
+		
+	</div> <!-- /.w_row -->
+	
+{% endblock body %}
+
+{% block ros_leaderboard_bottom %}{% endblock ros_leaderboard_bottom %}
