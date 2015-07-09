@@ -1,4 +1,4 @@
-{% with build="/v5/bulldog/dist/1.0.0/20150414/1" %}
+{% with build="/v5/bulldog/dist/1.0.0/20150701/1" %}
 
 {% load remote_include %}
 
@@ -32,6 +32,10 @@
 	<![endif]-->
 	
 	<link rel="stylesheet" href="http://static.registerguard.com{{ build }}/css/bulldog.min.css">
+	
+	<!-- [BEGIN] Chartbeat -->
+	<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
+	<!-- [END] Chartbeat -->
 	
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://registerguard.com/apple-touch-icon-144x144-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://registerguard.com/apple-touch-icon-114x114-precomposed.png">
@@ -1172,6 +1176,35 @@
 	<!-- [BEGIN] Analytics -->
 	<script>(function(r,g,n,e,w,s){r.GoogleAnalyticsObject=e;r[e]||(r[e]=function(){(r[e].q=r[e].q||[]).push(arguments)});r[e].l=+new Date;w=g.createElement(n);s=g.getElementsByTagName(n)[0];w.src='//www.google-analytics.com/analytics.js';s.parentNode.insertBefore(w,s)}(window,document,'script','ga'));ga('create','UA-882065-1','registerguard.com');ga('require','displayfeatures');ga('require','linkid','linkid.js');ga('send','pageview');</script>
 	<!-- [END] Analytics -->
+	
+<!-- [BEGIN] Chartbeat -->
+<script type='text/javascript'>
+	var _sf_async_config = _sf_async_config || {};
+	/** CONFIGURATION START **/
+	_sf_async_config.uid = 61036;
+	_sf_async_config.domain = 'registerguard.com';
+	_sf_async_config.useCanonical = true;
+	_sf_async_config.sections = '{{ app_label }}';
+	_sf_async_config.authors = '{% firstof object.author object.byline %}';
+	/** CONFIGURATION END **/
+	(function() {
+		function loadChartbeat() {
+			window._sf_endpt = (new Date()).getTime();
+			var e = document.createElement('script');
+			e.setAttribute('language', 'javascript');
+			e.setAttribute('type', 'text/javascript');
+			e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+			document.body.appendChild(e);
+		}
+		var oldonload = window.onload;
+		window.onload = (typeof window.onload != 'function') ?
+			loadChartbeat : function() {
+				oldonload();
+				loadChartbeat();
+			};
+	})();
+</script>
+<!-- [END] Chartbeat -->
 	
 	{% block footer_last %}{# Used in ap_wfm Django app. #}{% endblock footer_last %}
 	

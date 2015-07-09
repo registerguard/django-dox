@@ -1,0 +1,22 @@
+{% extends "dox/bulldog.html" %}
+
+{% load allow_tags %}
+{% load splitter %}
+
+{% block head_ad_ids %}{% endblock head_ad_ids %}
+
+{% block leaderboard_1 %}{% endblock leaderboard_1 %}
+
+{% block mobile_banner %}{% endblock mobile_banner %}
+
+{% block body %}
+
+	{% block content %}
+
+		{{ block.super }}
+
+	{% endblock content %}
+
+{% endblock body %}
+
+{% block ros_leaderboard_bottom %}{% endblock ros_leaderboard_bottom %}
