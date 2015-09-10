@@ -46,7 +46,7 @@
 			"url": "http://projects.registerguard.com{{ object.get_absolute_url }}",
 			"dateCreated": "{{ object.created|date:"c" }}",
 			"articleSection": "{{ app_label }}",
-			"creator": "{% firstof object.author object.byline|striptag %}",
+			"creator": "{{ object.author }}",
 			"keywords": ""
 		}
 	</script>
