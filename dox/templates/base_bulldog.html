@@ -9,34 +9,34 @@
 <!--[if gt IE 8]><!--> <html class="no-js no-touch">                 <!--<![endif]-->
 
 <head>
-	
+
 	<meta charset="utf-8">
-	
+
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 	<meta http-equiv="cleartype" content="on">
-	
+
 	<title>{% block head_title %}{% endblock head_title %}{% block head_title_extra %} | The Register-Guard | Eugene, Oregon{% endblock head_title_extra %}</title>
 	<meta name="description" content="{% block head_description %}{% endblock head_description %}">
 	<meta name="keywords" content="{% block head_keywords %}{% endblock head_keywords %}">
-	
+
 	<meta name="verify-v1" content="FPxMUeDPHJaIRBh+RAEc0QZisGX9WHLZuqlbleiLe3c=">
 	<meta name="google-site-verification" content="-b9kSGtOMT3DZyn5y1faDWWBN74GtyBDZlCDJuf39Yc">
 	<meta name="y_key" content="c812b5bf5b82479c">
-	
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<script src="http://static.registerguard.com{{ build }}/js/preflight.min.js"></script>
-	
+
 	<!--[if (lt IE 9) & (!IEMobile 7)]>
 		<script src="http://static.registerguard.com{{ build }}/js/html5shiv-printshiv.min.js"></script>
 	<![endif]-->
-	
+
 	<link rel="stylesheet" href="http://static.registerguard.com{{ build }}/css/bulldog.min.css">
-	
+
 	<!-- [BEGIN] Chartbeat -->
 	<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
 	<!-- [END] Chartbeat -->
-	
+
 	<!-- [BEGIN] Parse.ly -->
 	<script type="application/ld+json">
 		{
@@ -46,12 +46,12 @@
 			"url": "http://projects.registerguard.com{{ object.get_absolute_url }}",
 			"dateCreated": "{{ object.created|date:"c" }}",
 			"articleSection": "{{ app_label }}",
-			"creator": "{% firstof object.author object.byline %}",
+			"creator": "{% firstof object.author object.byline|striptag %}",
 			"keywords": ""
 		}
 	</script>
 	<!-- [END] Parse.ly -->
-	
+
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://registerguard.com/apple-touch-icon-144x144-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://registerguard.com/apple-touch-icon-114x114-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://registerguard.com/apple-touch-icon-72x72-precomposed.png">
@@ -59,18 +59,18 @@
 	<link rel="shortcut icon" href="http://www.registerguard.com/favicon.ico">
 	<meta name="msapplication-TileImage" content="http://registerguard.com/apple-touch-icon-144x144-precomposed.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
-	
+
 	<link rel="image_src" href="http://registerguard.com/apple-touch-icon-144x144-precomposed.png">
-	
+
 	{% block head_ad %}
-		
+
 		<!-- [BEGIN] OpenX -->
 		<link rel="stylesheet" href="http://advertising.registerguard.com/assets/hosted/css/ads.css?v=20141009-1">
 		<script src="//ox-d.registerguard.com/w/1.0/jstag"></script>
 		<script>
-			
+
 			var _ox = OX();
-			
+
 			{% block head_ad_ids %}
 				// Section front:
 				_ox.addAdUnit('537200276'); // Billboard
@@ -80,7 +80,7 @@
 				_ox.addAdUnit('537200279'); // Medium Rectangle 2
 				_ox.addAdUnit('537200284'); // Site Skin
 			{% endblock head_ad_ids %}
-			
+
 			// ROS:
 			_ox.addAdUnit('537200302'); // ROS Weather Widget
 			_ox.addAdUnit('331937');    // ROS Column Block
@@ -89,38 +89,38 @@
 			_ox.addAdUnit('537200305'); // ROS Medium Rectangle 3
 			_ox.addAdUnit('537200307'); // ROS Leaderboard Bottom
 			_ox.addAdUnit('537200312'); // ROS Mobile Banner Bottom
-			
+
 			// Variables:
 			_ox.addVariable('bp', ((window.innerWidth <= 1005) ? 'm' : 'd')); // ... return "m" or "d", where 1005px is the break point between "mobile" and "desktop".
 			{% block head_ad_vars %}{% endblock head_ad_vars %}
-			
+
 			// Get ads:
 			_ox.fetchAds();
-			
+
 		</script>
 		<!-- [END] OpenX -->
-		
+
 	{% endblock head_ad %}
-	
+
 	{% block head_extra %}{% endblock head_extra %}
-	
+
 </head>
 <body>
-	
+
 	{% block site_skin %}
 		<!-- //////////////////// Site Skin \\\\\\\\\\\\\\\\\\\\ -->
 		<script>_ox.showAdUnit('537200284');</script>
 		<!-- \\\\\\\\\\\\\\\\\\\\ Site Skin //////////////////// -->
 	{% endblock site_skin %}
-	
+
 	<div class="wiffle">
-		
+
 		{% block header %}
-			
+
 			<header>
-				
+
 				<div id="bd_ear">
-					
+
 					<ul>
 						<li>{% block time %}<time datetime="{% now "Y-m-d\TH:m:sO" %}"><span>{% now "l" %}, </span>{% now "F j, Y" %}</time>{% endblock time %}</li>
 						<li><a href="http://services.registerguard.com/">Subscriber Services</a></li>
@@ -130,47 +130,47 @@
 						<li><a href="http://registerguard.com/classifieds">Classified</a></li>
 						<li><a href="http://registerguard.com">Home</a></li>
 					</ul>
-					
+
 				</div> <!-- /#bd_ear -->
-				
+
 				<div id="bd_masthead">
-					
+
 					<h1 id="bd_flag"><a href="http://registerguard.com">The Register-Guard</a></h1>
-					
+
 					<div id="forecast">
-						
+
 						{% block weather_ad %}
-							
+
 							<!-- //////////////////// ROS Weather Widget \\\\\\\\\\\\\\\\\\\\ -->
 							<div class="button_1 advert"><div id="ros-weather-widget"><script>_ox.showAdUnit('537200302');</script></div></div>
 							<!-- \\\\\\\\\\\\\\\\\\\\ ROS Weather Widget //////////////////// -->
-							
+
 						{% endblock weather_ad %}
-						
+
 					</div> <!-- /#forecast -->
-					
+
 					<nav>
-						
+
 						<div id="bd_proof">
-							
+
 							<h1 class="bd_cut">Navigation</h1>
-							
+
 							<ul id="megawhale" class="mw-ul">
-								
+
 								<li class="mw-li">
-									
+
 									<a class="mw-a" href="http://registerguard.com">News</a>
-									
+
 									<div class="mw-div">
-										
+
 										<div class="bd_filler">
-											
+
 											<div class="w_line">
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://registerguard.com">Home</a></li>
 															<li><a href="http://registerguard.com/rg/news/local/">Local</a></li>
@@ -182,21 +182,21 @@
 															<li><a href="http://registerguard.com/rg/news/community/">Community</a></li>
 															<li><a href="http://registerguard.com/newsletters">E-mail Newsletter</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of2">
-													
+
 													<div class="bd_gutter">
-														
+
 														<h2 class="bd_insert">Associated Press</h2>
-														
+
 														<div class="w_line">
-															
+
 															<div class="w_unit w_C1of2">
-																
+
 																<ul class="bd_scoop">
 																	<li><a href="http://projects.registerguard.com/apf/top/index/25/">Top Stories</a></li>
 																	<li><a href="http://projects.registerguard.com/apf/nwn/index/25/">Northwest Now</a></li>
@@ -208,11 +208,11 @@
 																	<li><a href="http://projects.registerguard.com/apf/enter/index/25/">Entertainment</a></li>
 																	<li><a href="http://projects.registerguard.com/apf/politics/index/25/">Politics</a></li>
 																</ul> <!-- /.bd_scoop -->
-																
+
 															</div> <!-- /.w_unit -->
-															
+
 															<div class="w_unit w_C1of2 w_Cfix">
-																
+
 																<ul class="bd_scoop">
 																	<li><a href="http://projects.registerguard.com/apf/wx/index/25/">Weather</a></li>
 																	<li><a href="http://projects.registerguard.com/apf/us/index/25/">National</a></li>
@@ -223,65 +223,65 @@
 																	<li><a href="http://projects.registerguard.com/apf/lotteries/index/10/">Lotteries</a></li>
 																	<li><a href="http://projects.registerguard.com/pages/ap/podcasts/">Podcasts</a></li>
 																</ul> <!-- /.bd_scoop -->
-																
+
 															</div> <!-- /.w_unit -->
-															
+
 														</div> <!-- /.w_line -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4 w_Cfix">
-													
+
 													<div class="bd_gutter">
-														
+
 														<h2 class="bd_insert">Maps</h2>
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://projects.registerguard.com/police/eugene/">Eugene police call log</a></li>
 															<li><a href="http://projects.registerguard.com/police/springfield/">Springfield police call log</a></li>
 															<li><a href="http://projects.registerguard.com/pages/gas/">Lane County gas prices</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 														<h2 class="bd_insert">Follow us on Facebook</h2>
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://www.facebook.com/registerguard">fb.com/registerguard</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 														<h2 class="bd_insert">Follow us on Twitter</h2>
-														
+
 														<ul class="bd_scoop">
 															<li><a href="https://twitter.com/registerguard">@registerguard</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 											</div> <!-- /.w_line -->
-											
+
 										</div> <!-- /.bd_filler -->
-										
+
 									</div> <!-- /.mw-div -->
-									
+
 								</li> <!-- /.mw-li -->
-								
+
 								<li class="mw-li">
-									
+
 									<a class="mw-a" href="http://registerguard.com/rg/sports/">Sports</a>
-									
+
 									<div class="mw-div">
-										
+
 										<div class="bd_filler">
-											
+
 											<div class="w_line">
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://registerguard.com/rg/sports/">Local</a></li>
 															<li><a href="http://registerguard.com/rg/sports/football/">Oregon Ducks Football</a></li>
@@ -289,313 +289,313 @@
 															<li><a href="http://registerguard.com/rg/sports/#austin-meek">Columnist Austin Meek</a></li>
 															<li><a href="http://registerguard.com/rg/sports/basketball/">Oregon Basketball</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://registerguard.com/rg/sports/trackandfield/">Track &amp; Field</a></li>
 															<li><a href="http://registerguard.com/rg/sports/preps/">Preps</a></li>
 															<li><a href="http://registerguard.com/rg/sports/outdoors/">Outdoors</a></li>
 															<li><a href="http://registerguard.com/rg/sports/#archive">Latest Seven Days</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<h2 class="bd_insert">Associated Press Sports</h2>
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://projects.registerguard.com/apf/oregon-sports/index/25/">Oregon Sports</a></li>
 															<!-- <li><a href="http://registerguard.stats.com/cfb/front.asp">NCAA</a> | <a href="http://registerguard.stats.com/cfb/scoreboards.asp">Scoreboard</a></li> -->
 															<!-- <li><a href="http://registerguard.stats.com/cbk/front.asp">NCAA Men's Basketball</a> | <a href="http://registerguard.stats.com/cbk/scoreboard.asp">Scoreboard</a></li> -->
 															<!-- <li><a href="http://registerguard.stats.com/wcbk/front.asp">NCAA Women's Basketball</a> | <a href="http://registerguard.stats.com/wcbk/scoreboards.asp">Scoreboard</a></li> -->
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4 w_Cfix">
-													
+
 													<div class="bd_gutter">
-														
+
 														<h2 class="bd_insert">Follow us on Facebook</h2>
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://www.facebook.com/registerguard">fb.com/registerguard</a></li>
 														</ul>
-														
+
 														<h2 class="bd_insert">Follow us on Twitter</h2>
-														
+
 														<ul class="bd_scoop">
 															<li><a href="https://twitter.com/rgduckfootball">@rgduckfootball</a></li>
 															<li><a href="https://twitter.com/rgsports">@rgsports</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 											</div> <!-- /.w_line -->
-											
+
 										</div> <!-- /.bd_filler -->
-										
+
 									</div> <!-- /.mw-div -->
-									
+
 								</li> <!-- /.mw-li -->
-								
+
 								<li class="mw-li">
-									
+
 									<a class="mw-a" href="http://registerguard.com/rg/business/">Business</a>
-									
+
 									<div class="mw-div">
-										
+
 										<div class="bd_filler">
-											
+
 											<div class="w_line">
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://registerguard.com/rg/business/">Local</a></li>
 															<!-- <li><a href="http://registerguard.com/rg/business/#lookup">Stock Lookup</a></li> -->
 															<li><a href="http://registerguard.com/rg/business/#archive">Latest Seven Days</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<!-- <li><a href="http://registerguard.com/rg/business/#tools">Investor Tools</a></li> -->
 															<!-- <li><a href="http://registerguard.com/rg/business/#spotlight">Business Spotlight</a></li> -->
 															<li><a href="http://registerguard.com/rg/business/bluechip/">Blue Chip</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.unit -->
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://bizfinder.registerguard.com/">Business Directory</a></li>
 															<li><a href="http://projects.registerguard.com/apf/ore/or-portland-stocks/">Portland Stocks</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4 w_Cfix">
-													
+
 													<div class="bd_gutter">
-														
+
 														<h2 class="bd_insert">Follow us on Facebook</h2>
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://www.facebook.com/registerguard">fb.com/registerguard</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 														<h2 class="bd_insert">Follow us on Twitter</h2>
-														
+
 														<ul class="bd_scoop">
 															<li><a href="https://twitter.com/registerguard">@registerguard</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 											</div> <!-- /.w_line -->
-											
+
 										</div> <!-- /.bd_filler -->
-										
+
 									</div> <!-- /.mw-div -->
-									
+
 								</li> <!-- /.mw-li -->
-								
+
 								<li class="mw-li">
-									
+
 									<a class="mw-a" href="http://registerguard.com/rg/opinion/">Opinion</a>
-									
+
 									<div class="mw-div">
-										
+
 										<div class="bd_filler">
-											
+
 											<div class="w_line">
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://registerguard.com/rg/opinion/">Editorials</a></li>
 															<li><a href="http://registerguard.com/rg/opinion/">Letters</a></li>
 															<li><a href="http://registerguard.com/rg/opinion/#archive">Latest Seven Days</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of2">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://registerguard.com/rg/opinion/#viewpoint">Guest Viewpoint</a></li>
 															<li><a href="http://registerguard.com/rg/opinion/#letter">Contribute your Opinion</a></li>
 															<li><a href="http://registerguard.com/rg/opinion/endorsements/">Endorsements</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4 w_Cfix">
-													
+
 													<div class="bd_gutter">
-														
+
 														<h2 class="bd_insert">Follow us on Facebook</h2>
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://www.facebook.com/registerguard">fb.com/registerguard</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 														<h2 class="bd_insert">Follow us on Twitter</h2>
-														
+
 														<ul class="bd_scoop">
 															<li><a href="https://twitter.com/registerguard">@registerguard</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 											</div> <!-- /.w_line -->
-											
+
 										</div> <!-- /.bd_filler -->
-										
+
 									</div> <!-- /.mw-div -->
-									
+
 								</li> <!-- /.mw-li -->
-								
+
 								<li class="mw-li">
-									
+
 									<a class="mw-a" href="http://registerguard.com/rg/life/">Life</a>
-									
+
 									<div class="mw-div">
-										
+
 										<div class="bd_filler">
-											
+
 											<div class="w_line">
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://registerguard.com/rg/life/lifestyles/">Lifestyles</a></li>
 															<li><a href="http://registerguard.com/rg/life/food/">Food</a></li>
 															<li><a href="http://registerguard.com/rg/life/tastings/">Tastings</a></li>
 															<li><a href="http://registerguard.com/rg/life/healthyfamilies/">Healthy Families</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://registerguard.com/rg/life/weekend/">Weekend</a></li>
 															<li><a href="http://registerguard.com/rg/life/homeandgarden/">Home &amp; Garden</a></li>
 															<li><a href="http://registerguard.com/rg/sports/outdoors/">Outdoors</a></li>
 															<li><a href="http://registerguard.com/rg/life/discovery/">Discovery</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://registerguard.com/rg/life/retirement/">Destination: Retirement</a></li>
 															<li><a href="http://registerguard.com/choice">Readers' Choice</a></li>
 															<li><a href="http://parade.com/">Parade</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4 w_Cfix">
-													
+
 													<div class="bd_gutter">
-														
+
 														<h2 class="bd_insert">Follow us on Facebook</h2>
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://www.facebook.com/registerguard">fb.com/registerguard</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 														<h2 class="bd_insert">Follow us on Twitter</h2>
-														
+
 														<ul class="bd_scoop">
 															<li><a href="https://twitter.com/registerguard">@registerguard</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 											</div> <!-- /.w_line -->
-											
+
 										</div> <!-- /.bd_filler -->
-										
+
 									</div> <!-- /.mw-div -->
-									
+
 								</li> <!-- /.mw-li -->
-								
+
 								<li class="mw-li">
-									
+
 									<a class="mw-a" href="http://registerguard.com/rg/entertainment/">Entertainment</a>
-									
+
 									<div class="mw-div">
-										
+
 										<div class="bd_filler">
-											
+
 											<div class="w_line">
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://registerguard.com/rg/entertainment/">Entertainment</a></li>
 															<li><a href="http://registerguard.com/rg/entertainment/arts/">Arts</a></li>
@@ -603,196 +603,196 @@
 															<li><a href="http://affiliate.zap2it.com/tvlistings/ZCGrid.do?aid=oreurg">TV Listings</a></li>
 															<li><a href="http://movies.yahoo.com/showtimes/eugene-or/">Movie Listings</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://go.registerguard.com/entertainment/">Go Entertainment</a></li>
 															<li><a href="http://projects.registerguard.com/pages/entertainment/calendar/">Submit an event</a>
 															<li><a href="http://registerguard.com/newsletters">E-mail Newsletter</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													&nbsp;
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4 w_Cfix">
-													
+
 													<div class="bd_gutter">
-														
+
 														<h2 class="bd_insert">Follow us on Facebook</h2>
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://www.facebook.com/registerguard">fb.com/registerguard</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 														<h2 class="bd_insert">Follow us on Twitter</h2>
-														
+
 														<ul class="bd_scoop">
 															<li><a href="https://twitter.com/registerguard">@registerguard</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 											</div> <!-- /.w_line -->
-											
+
 										</div> <!-- /.bd_filler -->
-										
+
 									</div> <!-- /.mw-div -->
-									
+
 								</li> <!-- /.mw-li -->
-								
+
 								<li class="mw-li">
-									
+
 									<a class="mw-a" href="http://registerguard.com/rg/news/obituaries/">Obits</a>
-									
+
 									<div class="mw-div">
-										
+
 										<div class="bd_filler">
-											
+
 											<div class="w_line">
-												
+
 												<div class="w_unit w_C1of2">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://registerguard.com/rg/news/obituaries/">Obituaries</a></li>
 															<li><a href="http://www.legacy.com/obituaries/registerguard/obituary-search.aspx">Obituary search</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of2">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://www.legacy.com/obituaries/registerguard/obituary-browse.aspx">Recent obituaries and guest books</a></li>
 															<li><a href="http://projects.registerguard.com/pages/news-forms/#purchase-obituary">Purchase a tribute obituary</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 											</div> <!-- /.w_line -->
-											
+
 										</div> <!-- /.bd_filler -->
-										
+
 									</div> <!-- /.mw-div -->
-									
+
 								</li> <!-- /.mw-li -->
-								
+
 								<li class="mw-li">
-									
+
 									<a class="mw-a" href="http://registerguard.com/classifieds">Marketplace</a>
-									
+
 									<div class="mw-div">
-										
+
 										<div class="bd_filler">
-											
+
 											<div class="w_line">
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://registerguard.com/homes">Homes</a></li>
 															<li><a href="http://registerguard.com/autos">Autos</a></li>
 															<li><a href="http://registerguard.com/jobs">Jobs</a></li>
 															<li><a href="http://registerguard.com/classifieds">General Classifieds</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://mediakit.registerguard.com">Advertising Info</a><li>
 															<li><a href="http://mediakit.registerguard.com/contact-us/">Contact Advertising</a></li>
 															<li><a href="http://rgmedialab.com">RG Media Lab</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://mediakit.registerguard.com/classified-advertising/">Classified Advertising Info</a></li>
 															<li><a href="http://ads.registerguard.com">Place a Classified ad</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 												<div class="w_unit w_C1of4 w_Cfix">
-													
+
 													<div class="bd_gutter">
-														
+
 														<ul class="bd_scoop">
 															<li><a href="http://projects.registerguard.com/pages/rg-jobs/">Jobs at The Register-Guard</a></li>
 															<li><a href="http://registerguard.mycapture.com/mycapture/">Buy a photo</a></li>
 														</ul> <!-- /.bd_scoop -->
-														
+
 													</div> <!-- /.bd_gutter -->
-													
+
 												</div> <!-- /.w_unit -->
-												
+
 											</div> <!-- /.w_line -->
-											
+
 										</div> <!-- /.bd_filler -->
-										
+
 									</div> <!-- /.mw-div -->
-									
+
 								</li> <!-- /.mw-li -->
-								
+
 								<li class="mw-li mw-li-orphan">
-									
+
 									<a class="mw-a" href="http://projects.registerguard.com/pages/search/">Search</a>
-									
+
 									<div class="mw-div">
-										
+
 										<div class="bd_filler">
-											
+
 											<div class="bd_gutter">
-												
+
 												<h2 class="bd_insert">Search The Register-Guard</h2>
-												
+
 												<form id="finder" method="get" action="http://projects.registerguard.com/pages/search/">
-													
+
 													<div id="finder_opts" style="margin-bottom:10px">
 														<label><input type="radio" id="finder_opt-1" name="options" checked="checked" value="http://projects.registerguard.com/pages/search/"> Google Search</label>
 														<label><input type="radio" id="finder_opt-3" name="options" value="http://pqasb.pqarchiver.com/registerguard/results.html"> Proquest Newspaper Archives (<i>back to <b>2001</b></i>)</label>
 														<label><input type="radio" id="finder_opt-4" name="options" value="http://bizfinder.registerguard.com/search.pg"> BizFinder Local</label>
 													</div>
-													
+
 													<div>
 														<label for="finder_keywords">Keywords: <input type="search" id="finder_keywords" name="q" title="Search..." placeholder="Search..." results="5" autosave="finder">
 															<input id="finder_submit" type="submit" value="Search">
@@ -800,151 +800,151 @@
 														<a style="text-decoration:underline" href="http://news.google.com/newspapers?nid=4pF9x-cDGsoC">Google News Archive Search</a> (<i>back to <b>1867</b></i>)
 														<a style="text-decoration:underline" href="http://projects.registerguard.com/pages/search/help/">Search Help</a>
 													</div>
-													
+
 												</form>
-												
+
 											</div> <!-- /.bd_filler -->
-											
+
 										</div> <!-- /.bd_filler -->
-										
+
 									</div> <!-- /.mw-div -->
-									
+
 								</li> <!-- /.mw-li -->
-								
+
 							</ul> <!-- /#megawhale -->
-							
+
 						</div> <!-- /#bd_proof -->
-						
+
 					</nav>
-					
+
 				</div> <!-- /#bd_masthead -->
-				
+
 			</header>
-			
+
 		{% endblock header %}
-		
+
 		{% block banner_top %}
-			
+
 			<div id="bd_banner-top" class="bd_banner">
-				
+
 				{% block leaderboard_1 %}
-					
+
 					<!-- //////////////////// Leaderboard 1 \\\\\\\\\\\\\\\\\\\\ -->
 					<div class="advert Con Don"><div id="leaderboard-1"><script>_ox.showAdUnit('537200277');</script></div></div>
 					<!-- \\\\\\\\\\\\\\\\\\\\ Leaderboard 1 //////////////////// -->
-					
+
 				{% endblock leaderboard_1 %}
-				
+
 				{% block mobile_banner %}
-					
+
 					<!-- //////////////////// Mobile Banner \\\\\\\\\\\\\\\\\\\\ -->
 					<div class="advert Aon Bon"><div id="mobile-banner"><script>_ox.showAdUnit('537200313');</script></div></div>
 					<!-- \\\\\\\\\\\\\\\\\\\\ Mobile Banner //////////////////// -->
-					
+
 				{% endblock mobile_banner %}
-				
+
 			</div> <!-- /#bd_banner-top -->
-			
+
 		{% endblock banner_top %}
-		
+
 		<div id="bd_content">
 		<!-- ##### BEGIN CONTENT AREA ##### -->
-			
+
 			<section>
-				
+
 				{% block location %}{% endblock location %}
-				
+
 				{% block body %}
-					
+
 					<div class="w_row">
-						
+
 						<div class="w_col w_B300 w_C640 w_D980 Bla Cla Dla">
-							
+
 							{% block content %}{% endblock content %}
-							
+
 						</div> <!-- /.w_col -->
-						
+
 						<div class="w_col w_B300 Blb Clb Dlb">
-							
+
 							<div class="wrap give take">
-								
+
 								{% block secondary %}
-									
+
 									{% block medium_rectangle_1 %}
-										
+
 										<!-- //////////////////// Medium Rectangle 1 \\\\\\\\\\\\\\\\\\\\ -->
 										<div class="advert"><div id="medium-rectangle-1"><script>_ox.showAdUnit('537200278');</script></div></div>
 										<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 1 //////////////////// -->
-										
+
 										<hr>
-										
+
 									{% endblock medium_rectangle_1 %}
-									
+
 									{% block secondary_content %}{% endblock secondary_content %}
-									
+
 									{% block medium_rectangle_2 %}
-										
+
 										<!-- //////////////////// Medium Rectangle 2 \\\\\\\\\\\\\\\\\\\\ -->
 										<div class="advert"><div id="medium-rectangle-2"><script>_ox.showAdUnit('537200279');</script></div></div>
 										<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 2 //////////////////// -->
-										
+
 									{% endblock medium_rectangle_2 %}
-									
+
 								{% endblock secondary %}
-								
+
 							</div> <!-- /.wrap -->
-							
+
 						</div> <!-- /.w_col -->
-						
+
 					</div> <!-- /.w_row -->
-					
+
 				{% endblock body %}
-				
+
 			</section>
-			
+
 		<!-- ##### END CONTENT AREA ##### -->
 		</div> <!-- /#bd_content -->
-		
+
 		{% block banner_bottom %}
-			
+
 			<div id="bd_banner-bottom" class="bd_banner">
-				
+
 				{% block ros_leaderboard_bottom %}
-					
+
 					<!-- //////////////////// ROS Leaderboard Bottom \\\\\\\\\\\\\\\\\\\\ -->
 					<div class="advert"><div id="ros-leaderboard-bottom"><script>_ox.showAdUnit('537200307');</script></div></div>
 					<!-- \\\\\\\\\\\\\\\\\\\\ ROS Leaderboard Bottom //////////////////// -->
-					
+
 				{% endblock ros_leaderboard_bottom %}
-				
+
 				{% block ros_mobile_banner_bottom %}
-					
+
 					<!-- //////////////////// ROS Mobile Banner Bottom \\\\\\\\\\\\\\\\\\\\ -->
 					<div class="advert"><div id="ros-mobile-banner-bottom"><script>_ox.showAdUnit('537200312');</script></div></div>
 					<!-- \\\\\\\\\\\\\\\\\\\\ ROS Mobile Banner Bottom //////////////////// -->
-					
+
 				{% endblock ros_mobile_banner_bottom %}
-				
+
 			</div> <!-- /#bd_banner-bottom -->
-			
+
 		{% endblock banner_bottom %}
-		
+
 		{% block footer %}
-			
+
 			<footer>
-				
+
 				<div id="bd_morgue">
-					
+
 					<h1 class="bd_cut">Quick links</h1>
-					
+
 					<div class="w_row">
-						
+
 						<div class="w_col w_B300 w_C470 w_D300">
-							
+
 							<section>
-								
+
 								<h1 id="submit" class="bd_insert">Submit</h1>
-								
+
 								<ul class="bd_scoop">
 									<li><a href="mailto:newstips@registerguard.com">News tips</a></li>
 									<li><a href="http://registerguard.com/rg/opinion/#letter">Letters to the editor</a></li>
@@ -954,17 +954,17 @@
 									<li><a href="http://projects.registerguard.com/pages/news-forms/#volunteer-of-the-month">Volunteer of the month</a></li>
 									<li><a href="http://projects.registerguard.com/staff/#news">Contact the newsroom</a></li>
 								</ul> <!-- /.bd_scoop -->
-								
+
 							</section>
-							
+
 						</div> <!-- /.w_col -->
-						
+
 						<div class="w_col w_B300 w_C470 w_D300">
-							
+
 							<section>
-								
+
 								<h1 id="connect" class="bd_insert">Connect</h1>
-								
+
 								<ul class="bd_scoop">
 									<li><a href="http://projects.registerguard.com/pages/promotions/">Promotions / Contests</a></li>
 									<li><a href="http://www.registerguard.com/newsletters">Email newsletters</a></li>
@@ -977,17 +977,17 @@
 									<li><a href="mailto:feedback@registerguard.com">Give us feedback</a></li>
 									<li><a href="http://projects.registerguard.com/staff/">Contact The Register-Guard</a></li>
 								</ul> <!-- /.bd_scoop -->
-								
+
 							</section>
-							
+
 						</div> <!-- /.w_col -->
-						
+
 						<div class="w_col w_B300 w_C470 w_D300 w_Bc w_Cc">
-							
+
 							<section>
-								
+
 								<h1 id="marketplace" class="bd_insert">Marketplace</h1>
-								
+
 								<ul class="bd_scoop">
 									<li><a href="http://registerguard.com/homes">Homes</a></li>
 									<li><a href="http://registerguard.com/autos">Autos</a></li>
@@ -1001,21 +1001,21 @@
 									<li><a href="http://projects.registerguard.com/pages/rg-jobs/">Jobs at The Register-Guard</a></li>
 									<li><a href="http://registerguard.mycapture.com/mycapture/">Buy a photo</a></li>
 								</ul> <!-- /.bd_scoop -->
-								
+
 							</section>
-							
+
 						</div> <!-- /.w_col -->
-						
+
 						<div class="w_col w_B300 w_C470 w_D300">
-							
+
 							<section>
-								
+
 								<h1 id="services" class="bd_insert">Subscriber Services</h1>
-								
+
 								<div class="bd_box">
-									
+
 									<div id="rgpdf"><a href="http://e-edition.registerguard.com">Today's front page</a></div>
-									
+
 									<ul class="bd_scoop">
 										<li><a href="http://services.registerguard.com/">Subscribe</a></li>
 										<li><a href="http://e-edition.registerguard.com/">E-Edition</a></li>
@@ -1025,52 +1025,52 @@
 										<li><a href="http://services.registerguard.com/">Contact Subscriber Services</a></li>
 										<li><a href="http://nie.registerguard.com/">Newspapers in Education</a></li>
 									</ul> <!-- /.bd_scoop -->
-									
+
 								</div> <!-- /.bd_box -->
-								
+
 							</section>
-							
+
 						</div> <!-- /.w_col -->
-						
+
 					</div> <!-- /.row -->
-					
+
 					<div id="bd_press">
-						
+
 						<p><span>The Register-Guard <span>&bull;</span></span> <span><a href="http://g.co/maps/h6sgk">3500 Chad Drive</a> &bull; Eugene, OR &bull; 97408 <span>/</span></span> <span>(541) 485-1234 <span>/</span> <a href="mailto:feedback@registerguard.com">Feedback</a></span></p>
-						
+
 						<p><span>Copyright &copy; 1996&ndash;{% now "Y" %} <span>/</span></span> <span><a href="http://projects.registerguard.com/pages/terms-of-use/">Terms</a> <span>/</span> <a href="http://projects.registerguard.com/pages/privacy-statement/">Privacy</a> <span>/</span> <a href="http://projects.registerguard.com/pages/copyright/">Copyright</a></span></p>
-						
+
 					</div> <!-- /#bd_press -->
-					
+
 				</div> <!-- /#bd_morgue -->
-				
+
 			</footer>
-			
+
 		{% endblock footer %}
-		
+
 	</div> <!-- /.wiffle -->
-	
+
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script>if(!window.jQuery){document.write('<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.10.2.min.js"><\/script>');}</script>
-	
+
 	<script src="http://static.registerguard.com{{ build }}/js/bulldog.min.js"></script>
-	
+
 	{% block footer_extra %}{% endblock footer_extra %}
-	
+
 	<!-- [BEGIN] comScore -->
 	<script>var _comscore=_comscore||[];_comscore.push({c1:'2',c2:'14055685'});(function(){var s=document.createElement('script'),el=document.getElementsByTagName('script')[0];s.async=true;s.src=(document.location.protocol=='https:'?'https://sb':'http://b')+'.scorecardresearch.com/beacon.js';el.parentNode.insertBefore(s,el);})();</script>
 	<noscript><img src="//b.scorecardresearch.com/p?c1=2&amp;c2=14055685&amp;cv=2.0&amp;cj=1" width="1" height="1" alt=""></noscript>
 	<!-- [END] comScore -->
-	
+
 	<!-- [BEGIN] Quantcast -->
 	<script>var _qevents=_qevents||[];(function(){var elem=document.createElement('script');elem.src=(document.location.protocol=='https:'?'https://secure':'http://edge')+'.quantserve.com/quant.js';elem.async=true;elem.type='text/javascript';var scpt=document.getElementsByTagName('script')[0];scpt.parentNode.insertBefore(elem,scpt);})();_qevents.push({qacct:'p-a2gE_aSO6ndbI'});</script>
 	<noscript><img src="//pixel.quantserve.com/pixel/p-a2gE_aSO6ndbI.gif" width="1" height="1" alt=""></noscript>
 	<!-- [END] Quantcast -->
-	
+
 	<!-- [BEGIN] Analytics -->
 	<script>(function(r,g,n,e,w,s){r.GoogleAnalyticsObject=e;r[e]||(r[e]=function(){(r[e].q=r[e].q||[]).push(arguments)});r[e].l=+new Date;w=g.createElement(n);s=g.getElementsByTagName(n)[0];w.src='//www.google-analytics.com/analytics.js';s.parentNode.insertBefore(w,s)}(window,document,'script','ga'));ga('create','UA-882065-1','registerguard.com');ga('require','displayfeatures');ga('require','linkid','linkid.js');ga('send','pageview');</script>
 	<!-- [END] Analytics -->
-	
+
 	<!-- [BEGIN] Chartbeat -->
 	<script type='text/javascript'>
 		var _sf_async_config = _sf_async_config || {};
@@ -1099,7 +1099,7 @@
 		})();
 	</script>
 	<!-- [END] Chartbeat -->
-	
+
 	<!-- [START] Parse.ly -->
 	<div id="parsely-root" style="display: none">
 	  <div id="parsely-cfg" data-parsely-site="registerguard.com"></div>
@@ -1116,9 +1116,9 @@
 	})("script", "parsely", document);
 	</script>
 	<!-- END Parse.ly Include -->
-	
+
 	{% block footer_last %}{# Used in ap_wfm Django app. #}{% endblock footer_last %}
-	
+
 </body>
 </html>
 
