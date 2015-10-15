@@ -37,21 +37,6 @@
 	<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
 	<!-- [END] Chartbeat -->
 
-	<!-- [BEGIN] Parse.ly -->
-	<script type="application/ld+json">
-		{
-			"@context": "http://schema.org",
-			{% if object.consumer_ready %}"@type": "NewsArticle",{% else %}"@type": "WebPage",{% endif %}
-			"headline": "{{ object.headline }}",
-			"url": "http://projects.registerguard.com{{ object.get_absolute_url }}",
-			"dateCreated": "{{ object.created|date:"c" }}",
-			"articleSection": "{{ app_label }}",
-			"creator": "{{ object.author }}",
-			"keywords": ""
-		}
-	</script>
-	<!-- [END] Parse.ly -->
-
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://registerguard.com/apple-touch-icon-144x144-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://registerguard.com/apple-touch-icon-114x114-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://registerguard.com/apple-touch-icon-72x72-precomposed.png">
@@ -614,6 +599,7 @@
 															<li><a href="http://go.registerguard.com/entertainment/">Go Entertainment</a></li>
 															<li><a href="http://projects.registerguard.com/pages/entertainment/calendar/">Submit an event</a>
 															<li><a href="http://registerguard.com/newsletters">E-mail Newsletter</a></li>
+															<li><a href="http://registerguard.com/choice">Readers' Choice</a></li>
 														</ul> <!-- /.bd_scoop -->
 
 													</div> <!-- /.bd_gutter -->
@@ -1128,23 +1114,6 @@
 		})();
 	</script>
 	<!-- [END] Chartbeat -->
-
-	<!-- [START] Parse.ly -->
-	<div id="parsely-root" style="display: none">
-	  <div id="parsely-cfg" data-parsely-site="registerguard.com"></div>
-	</div>
-	<script>
-	(function(s, p, d) {
-	  var h=d.location.protocol, i=p+"-"+s,
-		  e=d.getElementById(i), r=d.getElementById(p+"-root"),
-		  u=h==="https:"?"d1z2jf7jlzjs58.cloudfront.net"
-		  :"static."+p+".com";
-	  if (e) return;
-	  e = d.createElement(s); e.id = i; e.async = true;
-	  e.src = h+"//"+u+"/p.js"; r.appendChild(e);
-	})("script", "parsely", document);
-	</script>
-	<!-- END Parse.ly Include -->
 
 	{% block footer_last %}{# Used in ap_wfm Django app. #}{% endblock footer_last %}
 
