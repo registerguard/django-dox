@@ -36,6 +36,35 @@
 	<!-- [BEGIN] Chartbeat -->
 	<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
 	<!-- [END] Chartbeat -->
+	
+	<!-- [BEGIN] Mather Listener -->
+	<script type="text/javascript">
+		var _snaq = (window._snaq = window._snaq || []);
+		
+		// Set up
+		_snaq.push(['setCollectorUrl', 'www.i.matheranalytics.com']);
+		_snaq.push(['setAppId', 'v1']);
+		_snaq.push(['setCustomerId', 'ma31425']); // Client ID
+		_snaq.push(['setMarket', '431110934']); // Market ID
+		
+		_snaq.push(['setSection', '{{ app_label }}']); // Section //gSection.getName()
+		_snaq.push(['setPageType', 'dox']); // Page type (article, blog, gallery, home page, landing page, video)
+		_snaq.push(['setAuthor', '{% firstof object.author object.byline %}']); // Author
+		
+		_snaq.push(['enableActivityTracking', 30, 10]);
+		_snaq.push(['setPollInterval', 500]);
+		// page view must execute first
+		_snaq.push(['trackPageView']);
+		
+		// OpenX
+		// Enable OpenX render events
+		_ox.addHook(function(ox, props) {
+			props = ox.getProperties();
+			// send ad impression
+			_snaq.push(['trackUnstructEvent', 'Ad Impression', {eaid: props.ad_id, eenv: 'j', epid: props.adunit_id, content: props.type, server:'openx'}]);
+		}, OX.Hooks.ON_AD_RENDER_FINISH)
+	</script>
+	<!-- [END] Mather Listener -->
 
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://registerguard.com/apple-touch-icon-144x144-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://registerguard.com/apple-touch-icon-114x114-precomposed.png">
@@ -1115,6 +1144,20 @@
 		})();
 	</script>
 	<!-- [END] Chartbeat -->
+	
+	<!-- [BEGIN] Mather Listener -->
+	<script type="text/javascript">
+		(function() {
+			var a = [].concat.apply([], _snaq);
+			var src = a[a.indexOf('setCustomerId') + 1] + '/' + a[a.indexOf('setMarket') + 1] + '/sp.js?cb=' + Math.round(new Date() / 1.0368e9);
+			var sp = document.createElement('script'); sp.type = 'text/javascript'; sp.async = true; sp.defer = true;
+			sp._mather_tag = document.scripts[document.scripts.length - 1]; sp._mather_sp = sp.uniqueID;
+			sp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://js.matheranalytics.com/s/' + src;
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sp, s);
+		})();
+	</script>
+	<noscript><img src='http://www.i.matheranalytics.com/i?e=pv&aid=v1&cid=ma31425&mrk=431110934&p=web&tv=no-js-0.1.0&tid={% now "U" %}' style="display:none" height="1" width="1" alt/></noscript>
+	<!-- [END] Mather Listener -->
 
 	{% block footer_last %}{# Used in ap_wfm Django app. #}{% endblock footer_last %}
 
