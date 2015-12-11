@@ -36,35 +36,6 @@
 	<!-- [BEGIN] Chartbeat -->
 	<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
 	<!-- [END] Chartbeat -->
-	
-	<!-- [BEGIN] Mather Listener -->
-	<script type="text/javascript">
-		var _snaq = (window._snaq = window._snaq || []);
-		
-		// Set up
-		_snaq.push(['setCollectorUrl', 'www.i.matheranalytics.com']);
-		_snaq.push(['setAppId', 'v1']);
-		_snaq.push(['setCustomerId', 'ma31425']); // Client ID
-		_snaq.push(['setMarket', '431110934']); // Market ID
-		
-		_snaq.push(['setSection', '{{ app_label }}']); // Section //gSection.getName()
-		_snaq.push(['setPageType', 'dox']); // Page type (article, blog, gallery, home page, landing page, video)
-		_snaq.push(['setAuthor', '{% firstof object.author object.byline %}']); // Author
-		
-		_snaq.push(['enableActivityTracking', 30, 10]);
-		_snaq.push(['setPollInterval', 500]);
-		// page view must execute first
-		_snaq.push(['trackPageView']);
-		
-		// OpenX
-		// Enable OpenX render events
-		_ox.addHook(function(ox, props) {
-			props = ox.getProperties();
-			// send ad impression
-			_snaq.push(['trackUnstructEvent', 'Ad Impression', {eaid: props.ad_id, eenv: 'j', epid: props.adunit_id, content: props.type, server:'openx'}]);
-		}, OX.Hooks.ON_AD_RENDER_FINISH)
-	</script>
-	<!-- [END] Mather Listener -->
 
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://registerguard.com/apple-touch-icon-144x144-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://registerguard.com/apple-touch-icon-114x114-precomposed.png">
@@ -115,6 +86,57 @@
 		<!-- [END] OpenX -->
 
 	{% endblock head_ad %}
+	
+	<!-- [BEGIN] Mather Listener -->
+	<script type="text/javascript">
+		
+		(function() {
+			
+			function cookie(name) {
+				return unescape((("; " + document.cookie).split("; " + name + "=")[1] || "").split(";")[0]);
+			}
+
+			var _snaq = (window._snaq = window._snaq || []);
+			var uid = null
+			var ctx = null;
+			var c;
+			
+			// Set up
+			_snaq.push(['setCollectorUrl', 'www.i.matheranalytics.com']);
+			_snaq.push(['setAppId', 'v1']);
+			_snaq.push(['setCustomerId', 'ma31425']); // Client ID
+			_snaq.push(['setMarket', '431110934']); // Market ID
+			
+			_snaq.push(['setSection', '{{ app_label }}']); // Section //gSection.getName()
+			_snaq.push(['setPageType', 'dox']); // Page type (article, blog, gallery, home page, landing page, video)
+			_snaq.push(['setAuthor', '{% firstof object.author object.byline %}']); // Author
+			
+			uid && _snaq.push(['setUserId', uid]);
+			_snaq.push(['enableActivityTracking', 30, 10]);
+			_snaq.push(['setPollInterval', 500]);
+			// page view must execute first
+			_snaq.push(['trackPageView', null, ctx]);
+			
+			// OpenX
+			var tid;
+			
+			tid = setInterval(function() {
+				if (window._ox) {
+					clearTimeout(tid);
+					
+					// Enable OpenX render events
+					_ox.addHook(function(ox, props) {
+					props = ox.getProperties();
+					// send ad impression
+					_snaq.push(['trackUnstructEvent', 'Ad Impression', { eaid: props.ad_id, eenv: 'j', epid: props.adunit_id, content: props.type, server: 'openx' }]);
+				}, OX.Hooks.ON_AD_RENDER_FINISH);
+				}
+			}, 500);
+			
+		})();
+		
+	</script>
+	<!-- [END] Mather Listener -->
 
 	{% block head_extra %}{% endblock head_extra %}
 
