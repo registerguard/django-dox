@@ -921,17 +921,13 @@
 				{% block location %}{% endblock location %}
 
 				{% block body %}
-
-					<div class="w_row">
-
-						<div class="w_col w_C130 Aoff Boff">&nbsp;</div>
-
-							{% block content %}{% endblock content %}
-
-						<div class="w_col w_C130 Aoff Boff">&nbsp;</div>
-
-					</div> <!-- /.w_row -->
-
+				
+				<article>
+					
+					{% block content %}{% endblock content %}
+					
+				</article>
+				
 				{% endblock body %}
 
 			</section>
