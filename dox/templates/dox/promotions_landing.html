@@ -6,8 +6,13 @@
 {% block head_ad_ids %}
 
 	// Section front:
-	_ox.addAdUnit('537200277'); // Leaderboard 1
-	_ox.addAdUnit('537200313'); // Mobile Banner
+	if (document.documentElement.clientWidth <= 1004){
+		// Mobile
+		_ox.addAdUnit('537200313'); // Mobile Banner
+	} else {
+		// Desktop
+		_ox.addAdUnit('537200277'); // Leaderboard 1
+	}
 	_ox.addAdUnit('537200278'); // Medium Rectangle 1
 	_ox.addAdUnit('537200279'); // Medium Rectangle 2
 

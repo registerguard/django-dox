@@ -59,8 +59,13 @@
 			{% block head_ad_ids %}
 				// Section front:
 				_ox.addAdUnit('537200276'); // Billboard
-				_ox.addAdUnit('537200277'); // Leaderboard 1
-				_ox.addAdUnit('537200313'); // Mobile Banner
+				if (document.documentElement.clientWidth <= 1004){
+					// Mobile
+					_ox.addAdUnit('537200313'); // Mobile Banner
+				} else {
+					// Desktop
+					_ox.addAdUnit('537200277'); // Leaderboard 1
+				}
 				_ox.addAdUnit('537200278'); // Medium Rectangle 1
 				_ox.addAdUnit('537200279'); // Medium Rectangle 2
 				_ox.addAdUnit('537200284'); // Site Skin
@@ -72,8 +77,13 @@
 			_ox.addAdUnit('278420');    // ROS Adicio Widget
 			_ox.addAdUnit('537200304'); // ROS go Widget
 			_ox.addAdUnit('537200305'); // ROS Medium Rectangle 3
-			_ox.addAdUnit('537200307'); // ROS Leaderboard Bottom
-			_ox.addAdUnit('537200312'); // ROS Mobile Banner Bottom
+			if (document.documentElement.clientWidth <= 1004){
+				// Mobile
+				_ox.addAdUnit('537200312'); // ROS Mobile Banner Bottom
+			} else {
+				// Desktop
+				_ox.addAdUnit('537200307'); // ROS Leaderboard Bottom
+			}
 
 			// Variables:
 			_ox.addVariable('bp', ((window.innerWidth <= 1005) ? 'm' : 'd')); // ... return "m" or "d", where 1005px is the break point between "mobile" and "desktop".
