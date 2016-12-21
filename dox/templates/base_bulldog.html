@@ -49,51 +49,52 @@
 
 	{% block head_ad %}
 
-		<!-- [BEGIN] OpenX -->
-		<link rel="stylesheet" href="http://advertising.registerguard.com/assets/hosted/css/ads.css?v=20141009-1">
-		<script src="//ox-d.registerguard.com/w/1.0/jstag"></script>
-		<script>
-
-			var _ox = OX();
-
+	<!-- [BEGIN] DFP -->
+	<link rel="stylesheet" href="http://advertising.registerguard.com/assets/hosted/css/ads.css?v=20141009-1">
+	<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+	<script>
+		var googletag = googletag || {};
+		googletag.cmd = googletag.cmd || [];
+	</script>
+	<script>
+		googletag.cmd.push(function() {
+			
+			// Set up size mapping
+			var mapping = googletag.sizeMapping()
+				.addSize([0, 0], [320, 50]) // Default banner is mobile banner (320x50)
+				.addSize([1005, 100], [728, 90]) // On C breakpoint (>1005px) show desktop banner (728x90)
+				.build();
+			
 			{% block head_ad_ids %}
-				// Section front:
-				_ox.addAdUnit('537200276'); // Billboard
-				if (document.documentElement.clientWidth <= 1004){
-					// Mobile
-					_ox.addAdUnit('537200313'); // Mobile Banner
-				} else {
-					// Desktop
-					_ox.addAdUnit('537200277'); // Leaderboard 1
-				}
-				_ox.addAdUnit('537200278'); // Medium Rectangle 1
-				_ox.addAdUnit('537200279'); // Medium Rectangle 2
-				_ox.addAdUnit('537200284'); // Site Skin
+				// Define ad units
+				googletag.defineSlot('/30582678/RGM', [120, 60], 'ros-weather-widget')
+					.addService(googletag.pubads());
+				googletag.defineSlot('/30582678/RGM', [[320, 50], [728, 90]], 'leaderboard-top')
+					.setTargeting('pos', ['atf']) // Above the fold
+					.defineSizeMapping(mapping)
+					.addService(googletag.pubads());
+				googletag.defineSlot('/30582678/RGM', [300, 250], 'medium-rectangle-1')
+					.setTargeting('pos', ['rgm_one'])
+					.addService(googletag.pubads());
+				googletag.defineSlot('/30582678/RGM', [300, 250], 'medium-rectangle-2')
+					.setTargeting('pos', ['rgm_two'])
+					.addService(googletag.pubads());
+				googletag.defineSlot('/30582678/RGM', [[320, 50], [728, 90]], 'leaderboard-bottom')
+					.setTargeting('pos', ['btf']) // Below the fold
+					.defineSizeMapping(mapping)
+					.addService(googletag.pubads());
 			{% endblock head_ad_ids %}
-
-			// ROS:
-			_ox.addAdUnit('537200302'); // ROS Weather Widget
-			_ox.addAdUnit('331937');    // ROS Column Block
-			_ox.addAdUnit('278420');    // ROS Adicio Widget
-			_ox.addAdUnit('537200304'); // ROS go Widget
-			_ox.addAdUnit('537200305'); // ROS Medium Rectangle 3
-			if (document.documentElement.clientWidth <= 1004){
-				// Mobile
-				_ox.addAdUnit('537200312'); // ROS Mobile Banner Bottom
-			} else {
-				// Desktop
-				_ox.addAdUnit('537200307'); // ROS Leaderboard Bottom
-			}
-
-			// Variables:
-			_ox.addVariable('bp', ((window.innerWidth <= 1005) ? 'm' : 'd')); // ... return "m" or "d", where 1005px is the break point between "mobile" and "desktop".
+			
+			// Add subcategory for targeting
 			{% block head_ad_vars %}{% endblock head_ad_vars %}
-
-			// Get ads:
-			_ox.fetchAds();
-
-		</script>
-		<!-- [END] OpenX -->
+			
+			// Boilerplate DFP stuff
+			googletag.pubads().enableSingleRequest();
+			googletag.pubads().collapseEmptyDivs();
+			googletag.enableServices();
+		});
+	</script>
+	<!-- [END] DFP -->
 
 	{% endblock head_ad %}
 	
@@ -128,20 +129,20 @@
 			_snaq.push(['trackPageView', null, ctx]);
 			
 			// OpenX
-			var tid;
-			
-			tid = setInterval(function() {
-				if (window._ox) {
-					clearTimeout(tid);
-					
-					// Enable OpenX render events
-					_ox.addHook(function(ox, props) {
-					props = ox.getProperties();
-					// send ad impression
-					_snaq.push(['trackUnstructEvent', 'Ad Impression', { eaid: props.ad_id, eenv: 'j', epid: props.adunit_id, content: props.type, server: 'openx' }]);
-				}, OX.Hooks.ON_AD_RENDER_FINISH);
-				}
-			}, 500);
+			// var tid;
+			//
+			// tid = setInterval(function() {
+			// 	if (window._ox) {
+			// 		clearTimeout(tid);
+			//
+			// 		// Enable OpenX render events
+			// 		_ox.addHook(function(ox, props) {
+			// 		props = ox.getProperties();
+			// 		// send ad impression
+			// 		_snaq.push(['trackUnstructEvent', 'Ad Impression', { eaid: props.ad_id, eenv: 'j', epid: props.adunit_id, content: props.type, server: 'openx' }]);
+			// 	}, OX.Hooks.ON_AD_RENDER_FINISH);
+			// 	}
+			// }, 500);
 			
 		})();
 		
@@ -152,12 +153,6 @@
 
 </head>
 <body>
-
-	{% block site_skin %}
-		<!-- //////////////////// Site Skin \\\\\\\\\\\\\\\\\\\\ -->
-		<script>_ox.showAdUnit('537200284');</script>
-		<!-- \\\\\\\\\\\\\\\\\\\\ Site Skin //////////////////// -->
-	{% endblock site_skin %}
 
 	<div class="wiffle">
 
@@ -188,7 +183,7 @@
 						{% block weather_ad %}
 
 							<!-- //////////////////// ROS Weather Widget \\\\\\\\\\\\\\\\\\\\ -->
-							<div class="button_1 advert"><div id="ros-weather-widget"><script>_ox.showAdUnit('537200302');</script></div></div>
+							<div id='ros-weather-widget'><script>googletag.cmd.push(function() { googletag.display('ros-weather-widget'); });</script></div>
 							<!-- \\\\\\\\\\\\\\\\\\\\ ROS Weather Widget //////////////////// -->
 
 						{% endblock weather_ad %}
@@ -930,18 +925,10 @@
 				{% block leaderboard_1 %}
 
 					<!-- //////////////////// Leaderboard 1 \\\\\\\\\\\\\\\\\\\\ -->
-					<div class="advert Con Don"><div id="leaderboard-1"><script>_ox.showAdUnit('537200277');</script></div></div>
+					<div id='leaderboard-top'><script>googletag.cmd.push(function() { googletag.display('leaderboard-top'); });</script></div>
 					<!-- \\\\\\\\\\\\\\\\\\\\ Leaderboard 1 //////////////////// -->
 
 				{% endblock leaderboard_1 %}
-
-				{% block mobile_banner %}
-
-					<!-- //////////////////// Mobile Banner \\\\\\\\\\\\\\\\\\\\ -->
-					<div class="advert Aon Bon"><div id="mobile-banner"><script>_ox.showAdUnit('537200313');</script></div></div>
-					<!-- \\\\\\\\\\\\\\\\\\\\ Mobile Banner //////////////////// -->
-
-				{% endblock mobile_banner %}
 
 			</div> <!-- /#bd_banner-top -->
 
@@ -977,19 +964,11 @@
 
 				{% block ros_leaderboard_bottom %}
 
-					<!-- //////////////////// ROS Leaderboard Bottom \\\\\\\\\\\\\\\\\\\\ -->
-					<div class="advert"><div id="ros-leaderboard-bottom"><script>_ox.showAdUnit('537200307');</script></div></div>
-					<!-- \\\\\\\\\\\\\\\\\\\\ ROS Leaderboard Bottom //////////////////// -->
+				<!-- //////////////////// ROS Leaderboard Bottom \\\\\\\\\\\\\\\\\\\\ -->
+				<div id='leaderboard-bottom'><script>googletag.cmd.push(function() { googletag.display('leaderboard-bottom'); });</script></div>
+				<!-- \\\\\\\\\\\\\\\\\\\\ ROS Leaderboard Bottom //////////////////// -->
 
 				{% endblock ros_leaderboard_bottom %}
-
-				{% block ros_mobile_banner_bottom %}
-
-					<!-- //////////////////// ROS Mobile Banner Bottom \\\\\\\\\\\\\\\\\\\\ -->
-					<div class="advert"><div id="ros-mobile-banner-bottom"><script>_ox.showAdUnit('537200312');</script></div></div>
-					<!-- \\\\\\\\\\\\\\\\\\\\ ROS Mobile Banner Bottom //////////////////// -->
-
-				{% endblock ros_mobile_banner_bottom %}
 
 			</div> <!-- /#bd_banner-bottom -->
 

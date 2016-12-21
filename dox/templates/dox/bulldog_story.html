@@ -3,6 +3,7 @@
 {% load allow_tags %}
 {% load splitter %}
 
+{% comment %}
 {% block head_ad_ids %}
 	
 	// Story page:
@@ -17,22 +18,15 @@
 	_ox.addAdUnit('537200299'); // Medium Rectangle 2
 	
 {% endblock head_ad_ids %}
+{% endcomment %}
 
 {% block leaderboard_1 %}
 	
 	<!-- //////////////////// Leaderboard 1 \\\\\\\\\\\\\\\\\\\\ -->
-	<div class="advert"><div id="leaderboard-1"><script>_ox.showAdUnit('537200296');</script></div></div>
+	<div id='leaderboard-top'><script>googletag.cmd.push(function() { googletag.display('leaderboard-top'); });</script></div>
 	<!-- \\\\\\\\\\\\\\\\\\\\ Leaderboard 1 //////////////////// -->
 	
 {% endblock leaderboard_1 %}
-
-{% block mobile_banner %}
-	
-	<!-- //////////////////// Mobile Banner \\\\\\\\\\\\\\\\\\\\ -->
-	<div class="advert"><div id="mobile-banner"><script>_ox.showAdUnit('537200316');</script></div></div>
-	<!-- \\\\\\\\\\\\\\\\\\\\ Mobile Banner //////////////////// -->
-	
-{% endblock mobile_banner %}
 
 {% block body %}
 	
