@@ -1,6 +1,9 @@
 {% extends "dox/drone.html" %}
 
-{% block head_ad_vars %}_ox.addVariable('s', 'mycapture');{% endblock head_ad_vars %}
+{% block head_ad_vars %}
+			// Add MyCapture subcategory for targeting
+			googletag.pubads().setTargeting('rgm_subcat',['mycapture'])
+{% endblock head_ad_vars %}
 
 {% block body %}
 	
