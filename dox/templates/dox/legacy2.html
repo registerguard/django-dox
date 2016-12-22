@@ -1,11 +1,14 @@
 {% extends "dox/drone.html" %}
 
-{% block head_ads %}
-	_ox.addVariable('s', 'news');
-	_ox.addVariable('s', 'legacy');
-	_ox.addVariable('c', 'obituaries');
-{% endblock head_ads %}
+{% block head_ad_vars %}
+	// Add Legacy subcategories for targeting
+	googletag.pubads().setTargeting('rgm_subcat',['news,legacy,obituaries'])
+{% endblock head_ad_vars %}
 
-{% block body %}{% endblock body %}
+{% block body %}
+	<!-- //////////////////// Medium Rectangle 1 \\\\\\\\\\\\\\\\\\\\ -->
+	<div class="advert"><div id='medium-rectangle-1'><script>googletag.cmd.push(function() { googletag.display('medium-rectangle-1'); });</script></div></div>
+	<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 1 //////////////////// -->
+{% endblock body %}
 
 {% block banner_bottom %}{% endblock banner_bottom %}
