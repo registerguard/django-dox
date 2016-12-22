@@ -3,40 +3,18 @@
 {% load allow_tags %}
 {% load splitter %}
 
-{% block head_ad_ids %}
-
-	// Section front:
-	if (document.documentElement.clientWidth <= 1004){
-		// Mobile
-		_ox.addAdUnit('537200313'); // Mobile Banner
-	} else {
-		// Desktop
-		_ox.addAdUnit('537200277'); // Leaderboard 1
-	}
-	_ox.addAdUnit('537200278'); // Medium Rectangle 1
-	_ox.addAdUnit('537200279'); // Medium Rectangle 2
-
-{% endblock head_ad_ids %}
-
 {% block head_ad_vars %}
-	_ox.addVariable('s', 'contests');
+			// Add Promotions subcategory for targeting
+			googletag.pubads().setTargeting('rgm_subcat',['contests'])
 {% endblock head_ad_vars %}
 
 {% block leaderboard_1 %}
 
 	<!-- //////////////////// Leaderboard 1 \\\\\\\\\\\\\\\\\\\\ -->
-	<div class="advert"><div id="leaderboard-1"><script>_ox.showAdUnit('537200277');</script></div></div>
+	<div class="advert"><div id='leaderboard-top'><script>googletag.cmd.push(function() { googletag.display('leaderboard-top'); });</script></div></div>
 	<!-- \\\\\\\\\\\\\\\\\\\\ Leaderboard 1 //////////////////// -->
 
 {% endblock leaderboard_1 %}
-
-{% block mobile_banner %}
-
-	<!-- //////////////////// Mobile Banner \\\\\\\\\\\\\\\\\\\\ -->
-	<div class="advert"><div id="mobile-banner"><script>_ox.showAdUnit('537200313');</script></div></div>
-	<!-- \\\\\\\\\\\\\\\\\\\\ Mobile Banner //////////////////// -->
-
-{% endblock mobile_banner %}
 
 {% block body %}
 
@@ -69,7 +47,7 @@
 			<div class="give">
 				
 				<!-- //////////////////// Medium Rectangle 1 \\\\\\\\\\\\\\\\\\\\ -->
-				<div class="advert"><div id="medium-rectangle-1"><script>_ox.showAdUnit('537200278');</script></div></div>
+				<div class="advert"><div id='medium-rectangle-1'><script>googletag.cmd.push(function() { googletag.display('medium-rectangle-1'); });</script></div></div>
 				<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 1 //////////////////// -->
 				
 			</div> <!-- ./give -->
@@ -117,13 +95,13 @@
 			<section>
 			
 				<h1 class="head">@registerguard on Twitter</h1>
-				<a 
-					class="twitter-timeline" 
-					href="https://twitter.com/registerguard" 
+				<a
+					class="twitter-timeline"
+					href="https://twitter.com/registerguard"
 					data-widget-id="347149624567558145"
-					data-dnt="true" 
-					data-screen-name="registerguard" 
-					width="100%" 
+					data-dnt="true"
+					data-screen-name="registerguard"
+					width="100%"
 					height="400"
 				>
 						Tweets by @registerguard
@@ -134,7 +112,7 @@
 			<hr>
 		
 			<!-- //////////////////// Medium Rectangle 2 \\\\\\\\\\\\\\\\\\\\ -->
-			<div class="advert"><div id="medium-rectangle-2"><script>_ox.showAdUnit('537200279');</script></div></div>
+			<div class="advert"><div id='medium-rectangle-2'><script>googletag.cmd.push(function() { googletag.display('medium-rectangle-2'); });</script></div></div>
 			<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 2 //////////////////// -->
 		
 			<hr>
