@@ -20,32 +20,51 @@
 	
 	{% block head_ad %}
 		
-		<!-- [BEGIN] OpenX -->
-		<script src="//ox-d.registerguard.com/w/1.0/jstag"></script>
+		<!-- [BEGIN] DFP -->
+		<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
 		<script>
-			
-			var _ox = OX();
-			
-			{% block head_ad_ids %}
-				// Section front:
-				_ox.addAdUnit('537200277'); // Leaderboard 1
-				_ox.addAdUnit('537200278'); // Medium Rectangle 1
-				_ox.addAdUnit('537200279'); // Medium Rectangle 2
-			{% endblock head_ad_ids %}
-			
-			// ROS:
-			_ox.addAdUnit('537200307'); // ROS Leaderboard Bottom
-			_ox.addAdUnit('278420');    // ROS Adicio Widget
-			
-			// Variables:
-			_ox.addVariable('bp', 'd');
-			{% block head_ad_vars %}{% endblock head_ad_vars %}
-			
-			// Get ads:
-			_ox.fetchAds();
-			
+			var googletag = googletag || {};
+			googletag.cmd = googletag.cmd || [];
 		</script>
-		<!-- [END] OpenX -->
+		<script>
+			googletag.cmd.push(function() {
+				
+				// Set up size mapping
+				var mapping = googletag.sizeMapping()
+					.addSize([0, 0], [320, 50]) // Default banner is mobile banner (320x50)
+					.addSize([1005, 100], [728, 90]) // On C breakpoint (>1005px) show desktop banner (728x90)
+					.build();
+				
+				// Define ad units
+				googletag.defineSlot('/30582678/RGM', [[320, 50], [728, 90]], 'leaderboard-top')
+					.setTargeting('pos', ['atf']) // Above the fold
+					.defineSizeMapping(mapping)
+					.addService(googletag.pubads());
+				googletag.defineSlot('/30582678/RGM', [300, 250], 'medium-rectangle-1')
+					.setTargeting('pos', ['rgm_one'])
+					.addService(googletag.pubads());
+				googletag.defineSlot('/30582678/RGM', [300, 250], 'medium-rectangle-2')
+					.setTargeting('pos', ['rgm_two'])
+					.addService(googletag.pubads());
+				googletag.defineSlot('/30582678/RGM', [300, 525], 'adicio-widget')
+					.setTargeting('rgm_subcat', ['rgm_adicio'])
+					.addService(googletag.pubads());
+				googletag.defineSlot('/30582678/RGM', [[320, 50], [728, 90]], 'leaderboard-bottom')
+					.setTargeting('pos', ['btf']) // Below the fold
+					.defineSizeMapping(mapping)
+					.addService(googletag.pubads());
+				
+				// Add nie subcategory for targeting
+				googletag.pubads().setTargeting('rgm_subcat',['nie'])
+				
+				// Boilerplate DFP stuff
+				googletag.pubads().enableSingleRequest();
+				googletag.pubads().collapseEmptyDivs();
+				googletag.enableServices();
+				
+			});
+		</script>
+		<!-- [END] DFP -->
 		
 	{% endblock head_ad %}
 	
@@ -103,7 +122,7 @@
 				{% block leaderboard_1 %}
 					
 					<!-- //////////////////// Leaderboard 1 \\\\\\\\\\\\\\\\\\\\ -->
-					<div class="uav_advert"><div id="leaderboard-1"><script>_ox.showAdUnit('537200277');</script></div></div>
+					<div class="uav_advert"><div id='leaderboard-top'><script>googletag.cmd.push(function() { googletag.display('leaderboard-top'); });</script></div></div>
 					<!-- \\\\\\\\\\\\\\\\\\\\ Leaderboard 1 //////////////////// -->
 					
 				{% endblock leaderboard_1 %}
@@ -141,11 +160,11 @@
 								{% block medium_rectangle_1 %}
 									
 									<!-- //////////////////// Medium Rectangle 1 \\\\\\\\\\\\\\\\\\\\ -->
-									<div class="uav_advert"><div id="medium-rectangle-1"><script>_ox.showAdUnit('537200278');</script></div></div>
+									<div class="uav_advert"><div id='medium-rectangle-1'><script>googletag.cmd.push(function() { googletag.display('medium-rectangle-1'); });</script></div></div>
 									<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 1 //////////////////// -->
 									
 									<!-- //////////////////// ROS Adicio Widget \\\\\\\\\\\\\\\\\\\\ -->
-									<div class="uav_advert" style="margin-top: 10px;"><div id="ros-adicio-widget"><script>_ox.showAdUnit('278420');</script></div></div>
+									<div class="uav_advert" style="margin-top: 10px;"><div id='adicio-widget'><script>googletag.cmd.push(function() { googletag.display('adicio-widget'); });</script></div></div>
 									<!-- \\\\\\\\\\\\\\\\\\\\ ROS Adicio Widget //////////////////// -->
 									
 								{% endblock medium_rectangle_1 %}
@@ -155,7 +174,7 @@
 								{% block medium_rectangle_2 %}
 									
 									<!-- //////////////////// Medium Rectangle 2 \\\\\\\\\\\\\\\\\\\\ -->
-									<div class="uav_advert" style="margin-top: 10px;"><div id="medium-rectangle-2"><script>_ox.showAdUnit('537200279');</script></div></div>
+									<div class="uav_advert" style="margin-top: 10px;"><div id='medium-rectangle-2'><script>googletag.cmd.push(function() { googletag.display('medium-rectangle-2'); });</script></div></div>
 									<!-- \\\\\\\\\\\\\\\\\\\\ Medium Rectangle 2 //////////////////// -->
 									
 								{% endblock medium_rectangle_2 %}
@@ -183,7 +202,7 @@
 				{% block ros_leaderboard_bottom %}
 					
 					<!-- //////////////////// ROS Leaderboard Bottom \\\\\\\\\\\\\\\\\\\\ -->
-					<div class="uav_advert"><div id="ros-leaderboard-bottom"><script>_ox.showAdUnit('537200307');</script></div></div>
+					<div class="uav_advert"><div id='leaderboard-bottom'><script>googletag.cmd.push(function() { googletag.display('leaderboard-bottom'); });</script></div></div>
 					<!-- \\\\\\\\\\\\\\\\\\\\ ROS Leaderboard Bottom //////////////////// -->
 					
 				{% endblock ros_leaderboard_bottom %}
