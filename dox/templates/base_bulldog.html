@@ -73,11 +73,16 @@
 					.setTargeting('pos', ['atf']) // Above the fold
 					.defineSizeMapping(mapping)
 					.addService(googletag.pubads());
+				googletag.defineSlot('/30582678/RGM', [300, 100], 'column-block')
+					.addService(googletag.pubads());
 				googletag.defineSlot('/30582678/RGM', [300, 250], 'medium-rectangle-1')
 					.setTargeting('pos', ['rgm_one'])
 					.addService(googletag.pubads());
 				googletag.defineSlot('/30582678/RGM', [300, 250], 'medium-rectangle-2')
 					.setTargeting('pos', ['rgm_two'])
+					.addService(googletag.pubads());
+				googletag.defineSlot('/30582678/RGM', [300, 525], 'adicio-widget')
+					.setTargeting('rgm_subcat', ['rgm_adicio'])
 					.addService(googletag.pubads());
 				googletag.defineSlot('/30582678/RGM', [[320, 50], [728, 90]], 'leaderboard-bottom')
 					.setTargeting('pos', ['btf']) // Below the fold
@@ -128,22 +133,6 @@
 			// page view must execute first
 			_snaq.push(['trackPageView', null, ctx]);
 			
-			// OpenX
-			// var tid;
-			//
-			// tid = setInterval(function() {
-			// 	if (window._ox) {
-			// 		clearTimeout(tid);
-			//
-			// 		// Enable OpenX render events
-			// 		_ox.addHook(function(ox, props) {
-			// 		props = ox.getProperties();
-			// 		// send ad impression
-			// 		_snaq.push(['trackUnstructEvent', 'Ad Impression', { eaid: props.ad_id, eenv: 'j', epid: props.adunit_id, content: props.type, server: 'openx' }]);
-			// 	}, OX.Hooks.ON_AD_RENDER_FINISH);
-			// 	}
-			// }, 500);
-			
 		})();
 		
 	</script>
@@ -183,7 +172,7 @@
 						{% block weather_ad %}
 
 							<!-- //////////////////// ROS Weather Widget \\\\\\\\\\\\\\\\\\\\ -->
-							<div id='ros-weather-widget'><script>googletag.cmd.push(function() { googletag.display('ros-weather-widget'); });</script></div>
+							<div class='button_1 advert'><div id='ros-weather-widget'><script>googletag.cmd.push(function() { googletag.display('ros-weather-widget'); });</script></div></div>
 							<!-- \\\\\\\\\\\\\\\\\\\\ ROS Weather Widget //////////////////// -->
 
 						{% endblock weather_ad %}
@@ -925,7 +914,7 @@
 				{% block leaderboard_1 %}
 
 					<!-- //////////////////// Leaderboard 1 \\\\\\\\\\\\\\\\\\\\ -->
-					<div id='leaderboard-top'><script>googletag.cmd.push(function() { googletag.display('leaderboard-top'); });</script></div>
+					<div class='advert'><div id='leaderboard-top'><script>googletag.cmd.push(function() { googletag.display('leaderboard-top'); });</script></div></div>
 					<!-- \\\\\\\\\\\\\\\\\\\\ Leaderboard 1 //////////////////// -->
 
 				{% endblock leaderboard_1 %}
@@ -965,7 +954,7 @@
 				{% block ros_leaderboard_bottom %}
 
 				<!-- //////////////////// ROS Leaderboard Bottom \\\\\\\\\\\\\\\\\\\\ -->
-				<div id='leaderboard-bottom'><script>googletag.cmd.push(function() { googletag.display('leaderboard-bottom'); });</script></div>
+				<div class='advert'><div id='leaderboard-bottom'><script>googletag.cmd.push(function() { googletag.display('leaderboard-bottom'); });</script></div></div>
 				<!-- \\\\\\\\\\\\\\\\\\\\ ROS Leaderboard Bottom //////////////////// -->
 
 				{% endblock ros_leaderboard_bottom %}
