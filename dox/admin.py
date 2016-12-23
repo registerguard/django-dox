@@ -100,8 +100,7 @@ class PageAdmin(admin.ModelAdmin):
     #----------------------------------
     
     list_display       = ('name', 'url', 'template_name', 'status', 'author', 'publish_date', 'expiration_date', 'is_active',)
-    list_display_links = ('name', 'status', 'is_active', 'publish_date', 'expiration_date',)
-    list_editable      = ('url', 'template_name', 'author',)
+    list_editable      = ('url', 'template_name', 'status', 'is_active', 'author',)
     list_filter        = ('author', 'status', 'is_active', 'publish_date', 'expiration_date',)
     ordering           = ('name',)
     
