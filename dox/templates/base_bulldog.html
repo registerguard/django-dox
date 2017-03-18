@@ -51,7 +51,24 @@
 
 	<!-- [BEGIN] DFP -->
 	<link rel="stylesheet" href="http://advertising.registerguard.com/assets/hosted/css/ads.css?v=20141009-1">
-	<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+
+	<!--// Begin Bidder //-->
+	<script type="text/javascript" src="//os4m-d.openx.net/w/1.0/jstag?nc=30582678-OS4_Bidder"></script>
+	<script type="text/javascript">
+		var googletag = googletag || {};
+		googletag.cmd = googletag.cmd || [];
+		(function() {
+		var gads = document.createElement("script");
+		gads.async = true;
+		gads.type = "text/javascript";
+		var useSSL = "https:" == document.location.protocol;
+		gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+		var node = document.getElementsByTagName("script")[0];
+		node.parentNode.insertBefore(gads, node);
+		})();
+	</script>
+	<!--// End Bidder //-->
+
 	<script>
 		var googletag = googletag || {};
 		googletag.cmd = googletag.cmd || [];
