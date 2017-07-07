@@ -15,7 +15,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 	<meta http-equiv="cleartype" content="on">
 
-	<title>{% block head_title %}{% endblock head_title %}{% block head_title_extra %} | Eugene, Oregon{% endblock head_title_extra %}</title>
+	{% block super_head_title %}<title>{% block head_title %}{% endblock head_title %}{% block head_title_extra %} | Eugene, Oregon{% endblock head_title_extra %}</title>{% endblock super_head_title %}
 	<meta name="description" content="{% block head_description %}{% endblock head_description %}">
 	<meta name="keywords" content="{% block head_keywords %}{% endblock head_keywords %}">
 

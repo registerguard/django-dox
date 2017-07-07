@@ -1,0 +1,67 @@
+{% extends "dox/bulldog.html" %}
+
+{% block super_head_title %}
+	<title>Sports | The Register-Guard | Eugene, Oregon</title>
+	<meta property="og:title" content="Sports | The Register-Guard | Eugene, Oregon">
+{% endblock super_head_title %}
+
+{% block weather_ad %}{% endblock weather_ad %}
+
+{% block body %}
+
+<div class="w_row">
+	
+	<div class="w_col w_C640 w_D980 Cla Dla">
+		
+		{% block content %} {{ block.super }} {% endblock content %}
+		
+	</div> <!-- /.w_col -->
+	
+	<div class="w_col w_C300 Clb Dlb">
+		
+		<div class="wrap give">
+			
+			<hr class="Aon Bon">
+			
+			{% block secondary %}
+				
+				{% block medium_rectangle_1 %}
+					
+					<!-- //////////////////// MEDIUM RECTANGLE 1 \\\\\\\\\\\\\\\\\\\\ -->
+					
+					<div class='advert'><div id='medium-rectangle-1'><script>googletag.cmd.push(function() { googletag.display('medium-rectangle-1'); });</script></div></div>
+					
+					<!-- \\\\\\\\\\\\\\\\\\\\ MEDIUM RECTANGLE 1 //////////////////// -->
+					
+				{% endblock medium_rectangle_1 %}
+				
+				<hr>
+				
+				<!-- //////////////////// ROS Adicio Widget \\\\\\\\\\\\\\\\\\\\ -->
+				<div class="advert" style="margin-top: 10px;"><div id='adicio-widget'><script>googletag.cmd.push(function() { googletag.display('adicio-widget'); });</script></div></div>
+				<!-- \\\\\\\\\\\\\\\\\\\\ ROS Adicio Widget //////////////////// -->
+				
+			{% endblock secondary %}
+			
+		</div><!-- /.wrap /.give -->
+		
+	</div> <!-- /.w_col -->
+	
+</div> <!-- /.w_row -->
+
+{% endblock body %}
+
+{% block banner_bottom %}
+	
+	<hr style="margin-bottom: 0;">
+	
+	<!-- stopgap until ROS bottom can be overridden -->
+	<div id="bd_banner_bottom" class="bd_banner">
+		
+		<!-- //////////////////// LEADERBOARD BOTTOM \\\\\\\\\\\\\\\\\\\\ -->
+		<div class='advert'><div id='leaderboard-bottom'><script>googletag.cmd.push(function() { googletag.display('leaderboard-bottom'); });</script></div></div>
+		<!-- \\\\\\\\\\\\\\\\\\\\ LEADERBOARD BOTTOM //////////////////// -->
+		
+	</div> <!-- /#banner_bottom -->
+	
+{% endblock banner_bottom %}
