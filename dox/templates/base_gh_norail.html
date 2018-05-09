@@ -16,6 +16,9 @@ category: generalwrapper
   <meta http-equiv="X-UA-Compatible" content="IE=8" />
 <![endif]-->
 
+<meta name="description" content="{% block head_description %}{% endblock head_description %}">
+<meta name="keywords" content="{% block head_keywords %}{% endblock head_keywords %}">
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:site_name" content="The Register-Guard" />
@@ -24,6 +27,8 @@ category: generalwrapper
 <meta name="apple-itunes-app" content="app-id=1065549293?at=1000lkC&ct=sb-registerguard">
 <meta name="google-play-app" content="app-id=com.registerguard.id3078">
 <link rel="apple-touch-icon" href="http://{{ site_domain }}/Global/images/mobile/m_apps/registerguard/icons/icon175x175.jpeg">
+
+{% block head_extra %}{% endblock head_extra %}
 
 <!--Parse.ly global mainmeta-->
 <script type="application/ld+json">
@@ -35,7 +40,7 @@ category: generalwrapper
   }
 </script>
 
-		<title>{% block head_title %}{% endblock head_title %} Eugene, Ore. - The Register-Guard</title>
+		<title>{% block head_title %}{% endblock head_title %}{% block head_title_extra %} Eugene, Ore. - The Register-Guard{% endblock head_title_extra %}</title>
 
 		<script>
 			var __gh__coreData = {
