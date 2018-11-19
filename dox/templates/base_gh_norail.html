@@ -30,6 +30,7 @@ category: generalwrapper
 
 {% block head_extra %}{% endblock head_extra %}
 
+{% block head_parsely %}
 <!--Parse.ly global mainmeta-->
 <script type="application/ld+json">
   {
@@ -39,6 +40,7 @@ category: generalwrapper
   "thumbnailUrl": "http://{{ site_domain }}/Global/images/head/nameplate/registerguard_logo.png"
   }
 </script>
+{% endblock head_parsely %}
 
 	<title>{% block head_title %}{% endblock head_title %}{% block head_title_extra %} Eugene, Ore. - The Register-Guard{% endblock head_title_extra %}</title>
 
