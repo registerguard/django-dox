@@ -184,6 +184,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <body>
 	<div id="fb-root"></div>
 	<div id="wrapper-main">
+	  {% block header %}
 	  <header id="header-main" class="header header-expanded no-gutter static clearfix">
 	  <div id="toprail">
 		<div class="inner clearfix">
@@ -220,6 +221,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</div> <!-- #header-main-right -->
 	  </div> <!-- /#header-main-nameplate -->
 	  </header>
+	  {% endblock header %}
 
 	  <div class="ad ad-billboard text-center" id="baseLeaderboard" data-size-mapping="baseLeaderboard"></div>
 <!--==================================================
@@ -247,9 +249,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		  </div>
 		</section>
 
+		{% block lazy_ad_loader %}
 		<div data-gh-lazy-ad-loaded="false">
 		  <div class="ad ad-billboard ad-lazy text-center" data-gh-lazy-ad-bucket-targeting='{"ad-type":"standard","slot":"View Plus Leaderboard","sov":"base ROS"}'  data-dimensions="[[728,90],[970,90]]" data-size-mapping="baseLeaderboard"></div>
 		</div>
+		{% endblock lazy_ad_loader %}
 
 		</div><!-- /wrapper -->
 	  </div><!-- /content -->
@@ -257,7 +261,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	  <div id="push-main" class="clearfix"></div>
 	  </div><!-- /wrapper-main -->
   <!--==================================================
-  ====================END: CONTENT===================-->	
+  ====================END: CONTENT===================-->
+
+	  {% block footer %}
 	  <footer id="footer-main" class="clearfix">
 		<div class="inner container">
 		  <div id="footer-main-newsletter">
@@ -286,6 +292,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				<img id="footer-main-gh-logo" src="https://cdn.gatehousemedia.com/gh-sites/global/images/logo/ghlogo_horizontal.png" alt="Gatehouse Media Logo" />
 		</div>
 	  </footer><!-- /footer -->
+	  {% endblock footer %}
 
 	  {% block footer_extra %}{% endblock footer_extra %}
 
