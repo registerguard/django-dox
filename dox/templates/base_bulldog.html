@@ -51,80 +51,6 @@
 
 	{% block head_ad %}
 
-	<!-- [BEGIN] DFP -->
-	<link rel="stylesheet" href="http://advertising.registerguard.com/assets/hosted/css/ads.css?v=20141009-1">
-
-	<!--// Begin Bidder //-->
-	<script type="text/javascript" src="//os4m-d.openx.net/w/1.0/jstag?nc=30582678-OS4_Bidder"></script>
-	<script type="text/javascript">
-		var googletag = googletag || {};
-		googletag.cmd = googletag.cmd || [];
-		(function() {
-		var gads = document.createElement("script");
-		gads.async = true;
-		gads.type = "text/javascript";
-		var useSSL = "https:" == document.location.protocol;
-		gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
-		var node = document.getElementsByTagName("script")[0];
-		node.parentNode.insertBefore(gads, node);
-		})();
-	</script>
-	<!--// End Bidder //-->
-
-	<script>
-		var googletag = googletag || {};
-		googletag.cmd = googletag.cmd || [];
-	</script>
-	<script>
-		googletag.cmd.push(function() {
-			
-			// Set up size mapping
-			var mapping = googletag.sizeMapping()
-				.addSize([0, 0], [320, 50]) // Default banner is mobile banner (320x50)
-				.addSize([1005, 100], [728, 90]) // On C breakpoint (>1005px) show desktop banner (728x90)
-				.build();
-
-		{% block head_ad_ids %}
-			// If desktop, serve weather widget
-			if (document.documentElement.clientWidth >= 1005){
-				googletag.defineSlot('/30582678/RGM', [120, 60], 'ros-weather-widget')
-					.setTargeting('pos', ['rgm_weather_widget'])
-					.addService(googletag.pubads());
-			}
-
-			// Define ad units
-			googletag.defineSlot('/30582678/RGM', [[320, 50], [728, 90]], 'leaderboard-top')
-				.setTargeting('pos', ['atf']) // Above the fold
-				.defineSizeMapping(mapping)
-				.addService(googletag.pubads());
-			googletag.defineSlot('/30582678/RGM', [300, 100], 'column-block')
-				.addService(googletag.pubads());
-			googletag.defineSlot('/30582678/RGM', [300, 250], 'medium-rectangle-1')
-				.setTargeting('pos', ['rgm_one'])
-				.addService(googletag.pubads());
-			googletag.defineSlot('/30582678/RGM', [300, 250], 'medium-rectangle-2')
-				.setTargeting('pos', ['rgm_two'])
-				.addService(googletag.pubads());
-			googletag.defineSlot('/30582678/RGM', [300, 525], 'adicio-widget')
-				.setTargeting('rgm_subcat', ['rgm_adicio'])
-				.addService(googletag.pubads());
-			googletag.defineSlot('/30582678/RGM', [[320, 50], [728, 90]], 'leaderboard-bottom')
-				.setTargeting('pos', ['btf']) // Below the fold
-				.defineSizeMapping(mapping)
-				.addService(googletag.pubads());
-		{% endblock head_ad_ids %}
-
-			// Add subcategory for targeting
-			{% block head_ad_vars %}{% endblock head_ad_vars %}
-			
-			// Boilerplate DFP stuff
-			googletag.pubads().enableSingleRequest();
-			googletag.pubads().collapseEmptyDivs();
-			googletag.enableServices();
-		});
-	</script>
-	<!-- [END] DFP -->
-
 	{% endblock head_ad %}
 
 	{% block canonical_url %}{% endblock canonical_url %}
@@ -132,41 +58,6 @@
 	<!-- [BEGIN] Chartbeat -->
 	<script type='text/javascript'>var _sf_startpt=(new Date()).getTime()</script>
 	<!-- [END] Chartbeat -->
-
-	<!-- [BEGIN] Mather Listener -->
-	<script type="text/javascript">
-		
-		(function() {
-			
-			function cookie(name) {
-				return unescape((("; " + document.cookie).split("; " + name + "=")[1] || "").split(";")[0]);
-			}
-
-			var _snaq = (window._snaq = window._snaq || []);
-			var uid = null
-			var ctx = null;
-			var c;
-			
-			// Set up
-			_snaq.push(['setCollectorUrl', 'www.i.matheranalytics.com']);
-			_snaq.push(['setAppId', 'v1']);
-			_snaq.push(['setCustomerId', 'ma31425']); // Client ID
-			_snaq.push(['setMarket', '431110934']); // Market ID
-			
-			_snaq.push(['setSection', '{{ app_label }}']); // Section //gSection.getName()
-			_snaq.push(['setPageType', 'dox']); // Page type (article, blog, gallery, home page, landing page, video)
-			_snaq.push(['setAuthor', '{% firstof object.author object.byline %}']); // Author
-			
-			uid && _snaq.push(['setUserId', uid]);
-			_snaq.push(['enableActivityTracking', 30, 10]);
-			_snaq.push(['setPollInterval', 500]);
-			// page view must execute first
-			_snaq.push(['trackPageView', null, ctx]);
-			
-		})();
-		
-	</script>
-	<!-- [END] Mather Listener -->
 
 	{% block head_extra %}{% endblock head_extra %}
 
@@ -1184,23 +1075,6 @@
 	</script>
 	<noscript><img src='http://www.i.matheranalytics.com/i?e=pv&aid=v1&cid=ma31425&mrk=431110934&p=web&tv=no-js-0.1.0&tid={% now "U" %}' style="display:none" height="1" width="1" alt/></noscript>
 	<!-- [END] Mather Listener -->
-
-	<!-- [BEGIN] Pagefair -->
-
-	<script type="text/javascript">
-		(function() {
-			function async_load(script_url){
-				var protocol = ('https:' == document.location.protocol ? 'https://' : 'http://');
-				var s = document.createElement('script'); s.src = protocol + script_url;
-				var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-			}
-			bm_website_code = '136D8BC9C7204E6B';
-			jQuery(document).ready(function(){async_load('asset.pagefair.com/measure.min.js')});
-			jQuery(document).ready(function(){async_load('asset.pagefair.net/ads.min.js')});
-		})();
-	</script>
-
-	<!-- [END] Pagefair -->
 
 	{% block footer_last %}{# Used in ap_wfm Django app. #}{% endblock footer_last %}
 
